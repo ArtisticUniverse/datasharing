@@ -89,8 +89,9 @@ class BillFilters {
       (verifiedOnly ? 0 : 1);
 
   bool matches(Bill b, BillCategory? c) {
-    if (categoryIds.isNotEmpty && !categoryIds.contains(b.categoryId) && !categoryIds.contains(b.subcategoryId))
+    if (categoryIds.isNotEmpty && !categoryIds.contains(b.categoryId) && !categoryIds.contains(b.subcategoryId)) {
       return false;
+    }
     if (minAmount != null && b.remainingAmount < minAmount!) return false;
     if (maxAmount != null && b.remainingAmount > maxAmount!) return false;
     if (city != null && city!.isNotEmpty && b.city?.toLowerCase() != city!.toLowerCase()) return false;

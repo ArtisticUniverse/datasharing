@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -35,13 +36,13 @@ class _UploadBillScreenState extends State<UploadBillScreen> {
   bool _submitting = false;
 
   Future<void> _pick(ImageSource src) async {
+    final tree = context.read<AppState>().categories;
     final img = await ImagePicker().pickImage(source: src, maxWidth: 2400, imageQuality: 90);
     if (img == null) return;
-    setState(() {
-      _imagePath = img.path;
-      _scanning = true;
-    });
-    final tree = context.read<AppState>().categories;
+    setState(() => _imagePath = img.path);
+    // ML Kit OCR is Android/iOS only; on the web the user fills the form in by hand.
+    if (kIsWeb) return;
+    setState(() => _scanning = true);
     try {
       final scan = await ReceiptScanner().scan(img.path);
       setState(() {
@@ -275,7 +276,7 @@ class _ReceiptBox extends StatelessWidget {
         ),
         clipBehavior: Clip.antiAlias,
         child: Stack(fit: StackFit.expand, children: [
-          if (path != null) Image.file(File(path!), fit: BoxFit.cover),
+          if (path != null) kIsWeb ? Image.network(path!, fit: BoxFit.cover) : Image.file(File(path!), fit: BoxFit.cover),
           if (scanning)
             Container(
               color: Colors.black45,

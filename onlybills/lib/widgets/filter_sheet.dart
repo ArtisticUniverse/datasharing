@@ -30,7 +30,7 @@ class _FilterSheetState extends State<_FilterSheet> {
   late Set<String> _cats = {...widget.current.categoryIds};
   late RangeValues _range = RangeValues(widget.current.minAmount ?? 0, widget.current.maxAmount ?? _maxAmount);
   late String? _city = widget.current.city;
-  late Set<Urgency> _urg = {...widget.current.urgencies};
+  late final Set<Urgency> _urg = {...widget.current.urgencies};
   late bool _verifiedOnly = widget.current.verifiedOnly;
 
   @override
