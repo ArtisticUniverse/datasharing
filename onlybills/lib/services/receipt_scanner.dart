@@ -41,12 +41,92 @@ class ReceiptScan {
 class ReceiptScanner {
   static const merchantKeywords = <String, List<String>>{
     'pets': ['veterinary', 'vet', 'pet', 'pets', 'animal'],
-    'healthcare': ['hospital', 'hospitals', 'clinic', 'pharmacy', 'medical', 'diagnostic', 'diagnostics', 'pathology', 'apollo', 'medplus', 'dental', 'nursing', 'lab', 'labs', 'chemist'],
-    'food': ['restaurant', 'cafe', 'kitchen', 'dhaba', 'swiggy', 'zomato', 'bakery', 'dmart', 'grocery', 'grocers', 'supermarket', 'bigbasket', 'foods', 'sweets'],
-    'restricted_recreational': ['wine', 'wines', 'liquor', 'beer', 'bar', 'pub', 'spirits', 'tobacco', 'vape', 'hookah', 'cigar', 'cigars', 'paan'],
-    'education': ['school', 'college', 'university', 'academy', 'coaching', 'institute', 'tuition', 'books', 'book', 'stationery'],
-    'housing': ['electricity', 'power', 'water board', 'jal board', 'gas', 'bescom', 'rent', 'plumbing', 'plumber', 'pest'],
-    'transport': ['railway', 'railways', 'irctc', 'metro', 'uber', 'ola', 'petrol', 'fuel', 'bus', 'redbus', 'motors', 'garage'],
+    'healthcare': [
+      'hospital',
+      'hospitals',
+      'clinic',
+      'pharmacy',
+      'medical',
+      'diagnostic',
+      'diagnostics',
+      'pathology',
+      'apollo',
+      'medplus',
+      'dental',
+      'nursing',
+      'lab',
+      'labs',
+      'chemist'
+    ],
+    'food': [
+      'restaurant',
+      'cafe',
+      'kitchen',
+      'dhaba',
+      'swiggy',
+      'zomato',
+      'bakery',
+      'dmart',
+      'grocery',
+      'grocers',
+      'supermarket',
+      'bigbasket',
+      'foods',
+      'sweets'
+    ],
+    'restricted_recreational': [
+      'wine',
+      'wines',
+      'liquor',
+      'beer',
+      'bar',
+      'pub',
+      'spirits',
+      'tobacco',
+      'vape',
+      'hookah',
+      'cigar',
+      'cigars',
+      'paan'
+    ],
+    'education': [
+      'school',
+      'college',
+      'university',
+      'academy',
+      'coaching',
+      'institute',
+      'tuition',
+      'books',
+      'book',
+      'stationery'
+    ],
+    'housing': [
+      'electricity',
+      'power',
+      'water board',
+      'jal board',
+      'gas',
+      'bescom',
+      'rent',
+      'plumbing',
+      'plumber',
+      'pest'
+    ],
+    'transport': [
+      'railway',
+      'railways',
+      'irctc',
+      'metro',
+      'uber',
+      'ola',
+      'petrol',
+      'fuel',
+      'bus',
+      'redbus',
+      'motors',
+      'garage'
+    ],
     'technology': ['jio', 'airtel', 'vodafone', 'vi', 'bsnl', 'broadband', 'recharge', 'mobile'],
     'government': ['municipal', 'corporation', 'passport', 'government', 'nagar', 'registrar'],
   };
@@ -67,7 +147,9 @@ class ReceiptScanner {
         : (categoryId: best!, confidence: (0.5 + 0.15 * bestScore).clamp(0, 0.95).toDouble());
   }
 
-  static final _totalLine = RegExp(r'(grand\s*total|net\s*amount|total\s*amount|amount\s*payable|total)\D{0,12}([\d,]+\.?\d{0,2})', caseSensitive: false);
+  static final _totalLine = RegExp(
+      r'(grand\s*total|net\s*amount|total\s*amount|amount\s*payable|total)\D{0,12}([\d,]+\.?\d{0,2})',
+      caseSensitive: false);
   static final _money = RegExp(r'(?:₹|rs\.?|inr)?\s*([\d,]+\.\d{2})\s*$', caseSensitive: false);
   static final _date = RegExp(r'\b(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2,4})\b');
 
@@ -87,7 +169,8 @@ class ReceiptScanner {
     final text = lines.join('\n');
     // Merchant is usually the first line that isn't a number, date or "Tax Invoice".
     final merchant = lines.firstWhere(
-      (l) => RegExp(r'[A-Za-z]{3,}').hasMatch(l) && !RegExp(r'invoice|receipt|bill|gst', caseSensitive: false).hasMatch(l),
+      (l) =>
+          RegExp(r'[A-Za-z]{3,}').hasMatch(l) && !RegExp(r'invoice|receipt|bill|gst', caseSensitive: false).hasMatch(l),
       orElse: () => '',
     );
 

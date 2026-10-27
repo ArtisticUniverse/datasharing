@@ -27,9 +27,12 @@ class BillCard extends StatelessWidget {
       elevation: 6,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
+      // Short cards (landscape, small phones) scroll instead of overflowing.
+      child: LayoutBuilder(builder: (context, box) {
+        final compact = box.maxHeight < 420;
+        final purpose = Text(bill.fundingPurpose, style: theme.textTheme.bodyLarge);
+        final content = Column(
+          mainAxisSize: compact ? MainAxisSize.min : MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(children: [
@@ -40,7 +43,8 @@ class BillCard extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(parent?.displayName(lang) ?? '', style: theme.textTheme.labelMedium, overflow: TextOverflow.ellipsis),
+                  Text(parent?.displayName(lang) ?? '',
+                      style: theme.textTheme.labelMedium, overflow: TextOverflow.ellipsis),
                   Text(category?.displayName(lang) ?? 'Uncategorised',
                       style: theme.textTheme.titleMedium, overflow: TextOverflow.ellipsis),
                 ]),
@@ -51,16 +55,14 @@ class BillCard extends StatelessWidget {
             Text(bill.merchantName, style: theme.textTheme.headlineSmall, maxLines: 2, overflow: TextOverflow.ellipsis),
             if (bill.city != null || bill.billDate != null)
               Text(
-                [if (bill.city != null) bill.city!, if (bill.billDate != null) DateFormat.yMMMd().format(bill.billDate!)]
-                    .join(' · '),
+                [
+                  if (bill.city != null) bill.city!,
+                  if (bill.billDate != null) DateFormat.yMMMd().format(bill.billDate!)
+                ].join(' · '),
                 style: theme.textTheme.bodySmall,
               ),
             const SizedBox(height: 12),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Text(bill.fundingPurpose, style: theme.textTheme.bodyLarge),
-              ),
-            ),
+            if (compact) purpose else Expanded(child: SingleChildScrollView(child: purpose)),
             const SizedBox(height: 12),
             Wrap(spacing: 8, runSpacing: 4, children: [
               _Pill(
@@ -74,19 +76,24 @@ class BillCard extends StatelessWidget {
                 color: eligibilityColor(bill.fundingEligibility, cs),
               ),
               if (category != null && category!.classification != Classification.essential)
-                _Pill(icon: Icons.info_outline, label: classificationLabel(category!.classification), color: cs.tertiary),
+                _Pill(
+                    icon: Icons.info_outline, label: classificationLabel(category!.classification), color: cs.tertiary),
             ]),
             const SizedBox(height: 16),
             LinearProgressIndicator(value: bill.progress, minHeight: 8, borderRadius: BorderRadius.circular(4)),
             const SizedBox(height: 8),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Wrap(alignment: WrapAlignment.spaceBetween, spacing: 8, children: [
               Text('Requested ${formatMoney(bill.amount, bill.currency)}', style: theme.textTheme.bodyMedium),
               Text('${formatMoney(bill.remainingAmount, bill.currency)} left',
                   style: theme.textTheme.titleMedium?.copyWith(color: cs.primary, fontWeight: FontWeight.bold)),
             ]),
           ],
-        ),
-      ),
+        );
+        return Padding(
+          padding: const EdgeInsets.all(20),
+          child: compact ? SingleChildScrollView(child: content) : content,
+        );
+      }),
     );
   }
 }

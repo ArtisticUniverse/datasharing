@@ -96,4 +96,3 @@ class PreferencesScreen extends StatelessWidget {
     );
   }
 }
-

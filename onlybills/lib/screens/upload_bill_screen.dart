@@ -149,15 +149,16 @@ class _UploadBillScreenState extends State<UploadBillScreen> {
                 ),
               const SizedBox(height: 16),
               ListTile(
-                shape: RoundedRectangleBorder(
-                    side: BorderSide(color: cs.outline), borderRadius: BorderRadius.circular(4)),
+                shape:
+                    RoundedRectangleBorder(side: BorderSide(color: cs.outline), borderRadius: BorderRadius.circular(4)),
                 leading: Icon(categoryIcon(parent?.icon ?? _category?.icon)),
                 title: Text(_category?.displayName(lang) ?? 'Choose category *'),
                 subtitle: _category == null
                     ? null
                     : Text([
                         if (parent != null) parent.displayName(lang),
-                        if (_scan != null && !userChanged) 'Suggested (${(_scan!.confidence * 100).round()}% confident)',
+                        if (_scan != null && !userChanged)
+                          'Suggested (${(_scan!.confidence * 100).round()}% confident)',
                       ].join(' · ')),
                 trailing: const Icon(Icons.edit),
                 onTap: () async {
@@ -288,7 +289,8 @@ class _ReceiptBox extends StatelessWidget {
             ),
           if (path == null)
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              FilledButton.tonalIcon(onPressed: onCamera, icon: const Icon(Icons.photo_camera), label: const Text('Camera')),
+              FilledButton.tonalIcon(
+                  onPressed: onCamera, icon: const Icon(Icons.photo_camera), label: const Text('Camera')),
               const SizedBox(width: 12),
               OutlinedButton.icon(onPressed: onGallery, icon: const Icon(Icons.photo), label: const Text('Gallery')),
             ])
@@ -296,7 +298,8 @@ class _ReceiptBox extends StatelessWidget {
             Positioned(
               right: 8,
               bottom: 8,
-              child: FilledButton.tonalIcon(onPressed: onGallery, icon: const Icon(Icons.refresh), label: const Text('Replace')),
+              child: FilledButton.tonalIcon(
+                  onPressed: onGallery, icon: const Icon(Icons.refresh), label: const Text('Replace')),
             ),
         ]),
       );
@@ -321,7 +324,10 @@ class _ResultDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final (title, body) = switch (result.verificationStatus) {
       VerificationStatus.verified => ('Bill submitted', 'Your receipt passed automatic checks.'),
-      VerificationStatus.pendingReview => ('Submitted for review', 'A moderator will check this bill before donors see it.'),
+      VerificationStatus.pendingReview => (
+          'Submitted for review',
+          'A moderator will check this bill before donors see it.'
+        ),
       VerificationStatus.rejected => ('Bill not accepted', 'This bill could not be accepted.'),
     };
     return AlertDialog(

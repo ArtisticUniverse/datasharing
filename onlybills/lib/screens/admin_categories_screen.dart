@@ -44,10 +44,9 @@ class AdminCategoriesScreen extends StatelessWidget {
       ),
       body: ReorderableListView.builder(
         itemCount: items.length,
-        onReorder: (from, to) {
+        onReorderItem: (from, to) {
           final ids = items.map((c) => c.categoryId).toList();
-          final id = ids.removeAt(from);
-          ids.insert(to > from ? to - 1 : to, id);
+          ids.insert(to, ids.removeAt(from));
           run(() => s.repo.reorderCategories(ids), 'Order saved');
         },
         itemBuilder: (context, i) {
@@ -70,10 +69,12 @@ class AdminCategoriesScreen extends StatelessWidget {
               onSelected: (action) async {
                 switch (action) {
                   case 'edit':
-                    final e = await showDialog<BillCategory>(context: context, builder: (_) => _EditDialog(existing: c));
+                    final e =
+                        await showDialog<BillCategory>(context: context, builder: (_) => _EditDialog(existing: c));
                     if (e != null) await run(() => s.repo.upsertCategory(e), 'Saved');
                   case 'toggle':
-                    await run(() => s.repo.upsertCategory(BillCategory.fromMap({...c.toMap(), 'isActive': !c.isActive})),
+                    await run(
+                        () => s.repo.upsertCategory(BillCategory.fromMap({...c.toMap(), 'isActive': !c.isActive})),
                         c.isActive ? 'Disabled' : 'Enabled');
                   case 'merge':
                     final into = await pickCategory(context, tree, s.languageCode);
@@ -137,7 +138,7 @@ class _EditDialogState extends State<_EditDialog> {
           TextField(controller: _desc, decoration: const InputDecoration(labelText: 'Description')),
           const SizedBox(height: 12),
           DropdownButtonFormField<Classification>(
-            value: _class,
+            initialValue: _class,
             decoration: const InputDecoration(labelText: 'Classification'),
             items: Classification.values
                 .map((c) => DropdownMenuItem(value: c, child: Text(classificationLabel(c))))
@@ -145,7 +146,7 @@ class _EditDialogState extends State<_EditDialog> {
             onChanged: (v) => setState(() => _class = v!),
           ),
           DropdownButtonFormField<FundingEligibility>(
-            value: _elig,
+            initialValue: _elig,
             decoration: const InputDecoration(labelText: 'Funding eligibility'),
             items: FundingEligibility.values
                 .map((f) => DropdownMenuItem(value: f, child: Text(eligibilityLabel(f))))

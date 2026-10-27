@@ -78,9 +78,8 @@ class Bill {
       verificationStatus: _verification(m['verificationStatus'] as String?),
       verificationFlags: List<String>.from(m['verificationFlags'] ?? const []),
       fundingStatus: (m['fundingStatus'] ?? 'open') as String,
-      fundingEligibility: FundingEligibility.values.firstWhere(
-          (e) => e.name == m['fundingEligibility'],
-          orElse: () => FundingEligibility.review),
+      fundingEligibility: FundingEligibility.values
+          .firstWhere((e) => e.name == m['fundingEligibility'], orElse: () => FundingEligibility.review),
       eligibilityReasons: List<String>.from(m['eligibilityReasons'] ?? const []),
       fundedAmount: ((m['fundedAmount'] ?? 0) as num).toDouble(),
       remainingAmount: ((m['remainingAmount'] ?? m['amount']) as num).toDouble(),

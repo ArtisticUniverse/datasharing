@@ -47,7 +47,8 @@ class DemoRepository implements Repository {
 
   List<Bill> _visibleBills() => _bills
       .map(Bill.fromMap)
-      .where((b) => b.verificationStatus == VerificationStatus.verified &&
+      .where((b) =>
+          b.verificationStatus == VerificationStatus.verified &&
           b.fundingEligibility == FundingEligibility.eligible &&
           b.remainingAmount > 0)
       .toList();
@@ -91,7 +92,9 @@ class DemoRepository implements Repository {
 
     final status = flags.contains('duplicate_receipt')
         ? VerificationStatus.rejected
-        : (flags.isNotEmpty || cat.requiresManualReview ? VerificationStatus.pendingReview : VerificationStatus.verified);
+        : (flags.isNotEmpty || cat.requiresManualReview
+            ? VerificationStatus.pendingReview
+            : VerificationStatus.verified);
     final elig = cat.fundingEligibility == FundingEligibility.restricted || status == VerificationStatus.rejected
         ? FundingEligibility.restricted
         : (status == VerificationStatus.verified && cat.fundingEligibility == FundingEligibility.eligible

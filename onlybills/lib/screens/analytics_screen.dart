@@ -102,10 +102,13 @@ class _Stat extends StatelessWidget {
   Widget build(BuildContext context) => Card(
         child: Padding(
           padding: const EdgeInsets.all(12),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-            FittedBox(child: Text(value, style: Theme.of(context).textTheme.headlineSmall)),
-            Text(label, style: Theme.of(context).textTheme.bodySmall),
-          ]),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FittedBox(child: Text(value, style: Theme.of(context).textTheme.headlineSmall)),
+                Text(label, style: Theme.of(context).textTheme.bodySmall),
+              ]),
         ),
       );
 }

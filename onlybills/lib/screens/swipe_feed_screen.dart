@@ -91,7 +91,8 @@ class SwipeFeedScreen extends StatelessWidget {
                 child: LayoutBuilder(builder: (context, box) {
                   // Keep cards phone-shaped on tablets / landscape.
                   final w = math.min(box.maxWidth - 32, 480.0);
-                  final h = math.min(box.maxHeight - 110, w * 1.45);
+                  // Leave room for the action buttons (large FAB 96px + spacing).
+                  final h = math.max(0.0, math.min(box.maxHeight - 136, w * 1.45));
                   if (deck.isEmpty) return _Empty(onReset: s.resetSkipped);
                   return Column(children: [
                     const SizedBox(height: 8),
@@ -222,7 +223,11 @@ class _FundDialogState extends State<_FundDialog> {
 
   List<double> get _presets {
     final r = widget.bill.remainingAmount;
-    return {for (final v in [100.0, 500.0, 1000.0]) if (v < r) v, r}.toList();
+    return {
+      for (final v in [100.0, 500.0, 1000.0])
+        if (v < r) v,
+      r
+    }.toList();
   }
 
   @override
@@ -239,7 +244,8 @@ class _FundDialogState extends State<_FundDialog> {
           spacing: 6,
           children: _presets
               .map((p) => ActionChip(
-                    label: Text(p == b.remainingAmount ? 'All (${formatMoney(p, b.currency)})' : formatMoney(p, b.currency)),
+                    label: Text(
+                        p == b.remainingAmount ? 'All (${formatMoney(p, b.currency)})' : formatMoney(p, b.currency)),
                     onPressed: () => setState(() => _ctrl.text = p.toStringAsFixed(0)),
                   ))
               .toList(),

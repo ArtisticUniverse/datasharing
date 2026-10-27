@@ -39,8 +39,7 @@ class BillCategory {
 
   /// Falls back to English, then to the canonical name, so new languages
   /// (hi, ta, bn, ...) can be added in Firestore without an app release.
-  String displayName(String languageCode) =>
-      localizedNames[languageCode] ?? localizedNames['en'] ?? categoryName;
+  String displayName(String languageCode) => localizedNames[languageCode] ?? localizedNames['en'] ?? categoryName;
 
   factory BillCategory.fromMap(Map<String, dynamic> m) => BillCategory(
         categoryId: m['categoryId'] as String,
@@ -52,10 +51,9 @@ class BillCategory {
         isActive: (m['isActive'] ?? true) as bool,
         requiresAgeVerification: (m['requiresAgeVerification'] ?? false) as bool,
         requiresManualReview: (m['requiresManualReview'] ?? false) as bool,
-        fundingEligibility: _enumByName(
-            FundingEligibility.values, m['fundingEligibility'] as String?, FundingEligibility.review),
-        classification: _enumByName(
-            Classification.values, m['classification'] as String?, Classification.essential),
+        fundingEligibility:
+            _enumByName(FundingEligibility.values, m['fundingEligibility'] as String?, FundingEligibility.review),
+        classification: _enumByName(Classification.values, m['classification'] as String?, Classification.essential),
         displayOrder: (m['displayOrder'] ?? 0) as int,
       );
 
@@ -81,8 +79,7 @@ class CategoryTree {
   CategoryTree(Iterable<BillCategory> all) : byId = {for (final c in all) c.categoryId: c};
 
   List<BillCategory> get roots => _sorted(byId.values.where((c) => c.isRoot && c.isActive));
-  List<BillCategory> childrenOf(String id) =>
-      _sorted(byId.values.where((c) => c.parentCategoryId == id && c.isActive));
+  List<BillCategory> childrenOf(String id) => _sorted(byId.values.where((c) => c.parentCategoryId == id && c.isActive));
   BillCategory? operator [](String? id) => id == null ? null : byId[id];
 
   List<BillCategory> search(String query, String lang) {

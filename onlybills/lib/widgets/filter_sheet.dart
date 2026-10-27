@@ -61,7 +61,8 @@ class _FilterSheetState extends State<_FilterSheet> {
             ),
           ]),
           const SizedBox(height: 16),
-          Text('Amount left to fund: ₹${_range.start.round()} – ₹${_range.end.round()}${_range.end >= _maxAmount ? '+' : ''}',
+          Text(
+              'Amount left to fund: ₹${_range.start.round()} – ₹${_range.end.round()}${_range.end >= _maxAmount ? '+' : ''}',
               style: t.titleSmall),
           RangeSlider(
             values: _range,

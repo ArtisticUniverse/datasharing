@@ -67,7 +67,10 @@ class _CategoryPickerSheetState extends State<_CategoryPickerSheet> {
       subtitle: _query.isNotEmpty && parent != null
           ? Text(parent.displayName(widget.lang))
           : (restricted
-              ? Text(c.fundingEligibility == FundingEligibility.restricted ? 'Restricted from funding' : 'Reviewed before funding',
+              ? Text(
+                  c.fundingEligibility == FundingEligibility.restricted
+                      ? 'Restricted from funding'
+                      : 'Reviewed before funding',
                   style: TextStyle(color: eligibilityColor(c.fundingEligibility, Theme.of(context).colorScheme)))
               : null),
       selected: widget.initialId == c.categoryId,

@@ -42,8 +42,16 @@ void main() {
 
   test('filters', () {
     final b = Bill(
-      billId: '1', userId: 'u', merchantName: 'm', categoryId: 'health', amount: 1000, remainingAmount: 400,
-      verificationStatus: VerificationStatus.verified, city: 'Pune', urgency: Urgency.high, createdAt: DateTime(2026),
+      billId: '1',
+      userId: 'u',
+      merchantName: 'm',
+      categoryId: 'health',
+      amount: 1000,
+      remainingAmount: 400,
+      verificationStatus: VerificationStatus.verified,
+      city: 'Pune',
+      urgency: Urgency.high,
+      createdAt: DateTime(2026),
     );
     expect(const BillFilters(maxAmount: 500).matches(b, null), isTrue);
     expect(const BillFilters(minAmount: 500).matches(b, null), isFalse);

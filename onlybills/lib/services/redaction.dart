@@ -12,6 +12,5 @@ class Redactor {
     (RegExp(r'\b\d{6}\b(?=\s*$|\s*[,\n])', multiLine: true), '[PIN]'),
   ];
 
-  static String redact(String text) =>
-      _rules.fold(text, (t, r) => t.replaceAll(r.$1, r.$2));
+  static String redact(String text) => _rules.fold(text, (t, r) => t.replaceAll(r.$1, r.$2));
 }

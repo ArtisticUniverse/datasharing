@@ -42,7 +42,8 @@ class OnlyBillsApp extends StatelessWidget {
           title: 'OnlyBills',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(colorSchemeSeed: const Color(0xFF00897B), useMaterial3: true),
-          darkTheme: ThemeData(colorSchemeSeed: const Color(0xFF00897B), brightness: Brightness.dark, useMaterial3: true),
+          darkTheme:
+              ThemeData(colorSchemeSeed: const Color(0xFF00897B), brightness: Brightness.dark, useMaterial3: true),
           home: const _Shell(),
         ),
       );

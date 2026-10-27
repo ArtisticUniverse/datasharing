@@ -37,10 +37,8 @@ class FirebaseRepository implements Repository {
       .orderBy('createdAt', descending: true)
       .limit(200)
       .snapshots()
-      .map((s) => s.docs
-          .map((d) => Bill.fromMap(d.data()))
-          .where((b) => b.userId != _uid && b.remainingAmount > 0)
-          .toList());
+      .map((s) =>
+          s.docs.map((d) => Bill.fromMap(d.data())).where((b) => b.userId != _uid && b.remainingAmount > 0).toList());
 
   @override
   Future<DonorPreferences> loadPreferences() async {

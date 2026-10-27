@@ -62,6 +62,7 @@ abstract class Repository {
   Future<DonorPreferences> loadPreferences();
   Future<void> savePreferences(DonorPreferences prefs);
   Future<SubmitResult> submitBill(SubmitBillRequest req);
+
   /// Returns the remaining amount after funding.
   Future<double> fundBill(String billId, double amount);
   Future<List<CategoryAnalytics>> loadAnalytics();

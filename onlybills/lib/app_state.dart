@@ -42,7 +42,11 @@ class AppState extends ChangeNotifier {
       }).toList()
         ..sort((a, b) => b.urgency.index.compareTo(a.urgency.index));
 
-  List<String> get cities => {for (final b in _feed) if (b.city != null) b.city!}.toList()..sort();
+  List<String> get cities => {
+        for (final b in _feed)
+          if (b.city != null) b.city!
+      }.toList()
+        ..sort();
 
   void skip(Bill b) {
     _skipped.add(b.billId);
