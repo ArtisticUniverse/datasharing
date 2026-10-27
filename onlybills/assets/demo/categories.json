@@ -1,0 +1,4575 @@
+[
+  {
+    "categoryId": "healthcare",
+    "categoryName": "Healthcare & Medical",
+    "localizedNames": {
+      "en": "Healthcare & Medical"
+    },
+    "parentCategoryId": null,
+    "description": "Medical treatment, medicines and care.",
+    "icon": "local_hospital",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.hospital_bills",
+    "categoryName": "Hospital Bills",
+    "localizedNames": {
+      "en": "Hospital Bills"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.emergency_treatment",
+    "categoryName": "Emergency Treatment",
+    "localizedNames": {
+      "en": "Emergency Treatment"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.surgery_and_operations",
+    "categoryName": "Surgery & Operations",
+    "localizedNames": {
+      "en": "Surgery & Operations"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.doctor_consultation",
+    "categoryName": "Doctor Consultation",
+    "localizedNames": {
+      "en": "Doctor Consultation"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.diagnostic_tests_and_pathology",
+    "categoryName": "Diagnostic Tests & Pathology",
+    "localizedNames": {
+      "en": "Diagnostic Tests & Pathology"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.x_rays_mri_ct_scans",
+    "categoryName": "X-rays, MRI, CT Scans",
+    "localizedNames": {
+      "en": "X-rays, MRI, CT Scans"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.medicines_and_pharmacy",
+    "categoryName": "Medicines & Pharmacy",
+    "localizedNames": {
+      "en": "Medicines & Pharmacy"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.dental_treatment",
+    "categoryName": "Dental Treatment",
+    "localizedNames": {
+      "en": "Dental Treatment"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.eye_care_and_spectacles",
+    "categoryName": "Eye Care & Spectacles",
+    "localizedNames": {
+      "en": "Eye Care & Spectacles"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.pregnancy_and_maternity_care",
+    "categoryName": "Pregnancy & Maternity Care",
+    "localizedNames": {
+      "en": "Pregnancy & Maternity Care"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.child_healthcare",
+    "categoryName": "Child Healthcare",
+    "localizedNames": {
+      "en": "Child Healthcare"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.ambulance_services",
+    "categoryName": "Ambulance Services",
+    "localizedNames": {
+      "en": "Ambulance Services"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.physiotherapy_and_rehabilitation",
+    "categoryName": "Physiotherapy & Rehabilitation",
+    "localizedNames": {
+      "en": "Physiotherapy & Rehabilitation"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.mental_healthcare",
+    "categoryName": "Mental Healthcare",
+    "localizedNames": {
+      "en": "Mental Healthcare"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.medical_equipment",
+    "categoryName": "Medical Equipment",
+    "localizedNames": {
+      "en": "Medical Equipment"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.disability_support",
+    "categoryName": "Disability Support",
+    "localizedNames": {
+      "en": "Disability Support"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.veterinary_and_pet_healthcare",
+    "categoryName": "Veterinary & Pet Healthcare",
+    "localizedNames": {
+      "en": "Veterinary & Pet Healthcare"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 170,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "healthcare.health_insurance_premiums",
+    "categoryName": "Health Insurance Premiums",
+    "localizedNames": {
+      "en": "Health Insurance Premiums"
+    },
+    "parentCategoryId": "healthcare",
+    "description": "",
+    "icon": "local_hospital",
+    "displayOrder": 180,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food",
+    "categoryName": "Food, Dining & Restaurants",
+    "localizedNames": {
+      "en": "Food, Dining & Restaurants"
+    },
+    "parentCategoryId": null,
+    "description": "Groceries, meals and food assistance.",
+    "icon": "restaurant",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.restaurants",
+    "categoryName": "Restaurants",
+    "localizedNames": {
+      "en": "Restaurants"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.cafes_and_coffee_shops",
+    "categoryName": "Cafes & Coffee Shops",
+    "localizedNames": {
+      "en": "Cafes & Coffee Shops"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.street_food",
+    "categoryName": "Street Food",
+    "localizedNames": {
+      "en": "Street Food"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.fast_food",
+    "categoryName": "Fast Food",
+    "localizedNames": {
+      "en": "Fast Food"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.fine_dining",
+    "categoryName": "Fine Dining",
+    "localizedNames": {
+      "en": "Fine Dining"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "food.food_delivery",
+    "categoryName": "Food Delivery",
+    "localizedNames": {
+      "en": "Food Delivery"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.takeaway_orders",
+    "categoryName": "Takeaway Orders",
+    "localizedNames": {
+      "en": "Takeaway Orders"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.bakery_and_desserts",
+    "categoryName": "Bakery & Desserts",
+    "localizedNames": {
+      "en": "Bakery & Desserts"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.ice_cream_and_frozen_desserts",
+    "categoryName": "Ice Cream & Frozen Desserts",
+    "localizedNames": {
+      "en": "Ice Cream & Frozen Desserts"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.pizza_and_burgers",
+    "categoryName": "Pizza & Burgers",
+    "localizedNames": {
+      "en": "Pizza & Burgers"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.indian_meals_and_thalis",
+    "categoryName": "Indian Meals & Thalis",
+    "localizedNames": {
+      "en": "Indian Meals & Thalis"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.groceries_and_supermarkets",
+    "categoryName": "Groceries & Supermarkets",
+    "localizedNames": {
+      "en": "Groceries & Supermarkets"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.fruits_and_vegetables",
+    "categoryName": "Fruits & Vegetables",
+    "localizedNames": {
+      "en": "Fruits & Vegetables"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.dairy_products",
+    "categoryName": "Dairy Products",
+    "localizedNames": {
+      "en": "Dairy Products"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.meat_and_seafood",
+    "categoryName": "Meat & Seafood",
+    "localizedNames": {
+      "en": "Meat & Seafood"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.tiffin_and_meal_services",
+    "categoryName": "Tiffin & Meal Services",
+    "localizedNames": {
+      "en": "Tiffin & Meal Services"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.school_and_college_canteens",
+    "categoryName": "School & College Canteens",
+    "localizedNames": {
+      "en": "School & College Canteens"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 170,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.office_meals",
+    "categoryName": "Office Meals",
+    "localizedNames": {
+      "en": "Office Meals"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 180,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "food.community_kitchens",
+    "categoryName": "Community Kitchens",
+    "localizedNames": {
+      "en": "Community Kitchens"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 190,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "food.food_for_families_in_need",
+    "categoryName": "Food for Families in Need",
+    "localizedNames": {
+      "en": "Food for Families in Need"
+    },
+    "parentCategoryId": "food",
+    "description": "",
+    "icon": "restaurant",
+    "displayOrder": 200,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "restricted_recreational",
+    "categoryName": "Alcohol, Tobacco & Recreational Products",
+    "localizedNames": {
+      "en": "Alcohol, Tobacco & Recreational Products"
+    },
+    "parentCategoryId": null,
+    "description": "Age-restricted products. Excluded from charitable funding by default.",
+    "icon": "no_drinks",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.alcoholic_beverages",
+    "categoryName": "Alcoholic Beverages",
+    "localizedNames": {
+      "en": "Alcoholic Beverages"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.beer",
+    "categoryName": "Beer",
+    "localizedNames": {
+      "en": "Beer"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.wine",
+    "categoryName": "Wine",
+    "localizedNames": {
+      "en": "Wine"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.spirits",
+    "categoryName": "Spirits",
+    "localizedNames": {
+      "en": "Spirits"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.cigarettes",
+    "categoryName": "Cigarettes",
+    "localizedNames": {
+      "en": "Cigarettes"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.cigars",
+    "categoryName": "Cigars",
+    "localizedNames": {
+      "en": "Cigars"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.tobacco_products",
+    "categoryName": "Tobacco Products",
+    "localizedNames": {
+      "en": "Tobacco Products"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.vapes_and_e_cigarettes",
+    "categoryName": "Vapes & E-cigarettes",
+    "localizedNames": {
+      "en": "Vapes & E-cigarettes"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.hookah_and_shisha",
+    "categoryName": "Hookah & Shisha",
+    "localizedNames": {
+      "en": "Hookah & Shisha"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.nicotine_products",
+    "categoryName": "Nicotine Products",
+    "localizedNames": {
+      "en": "Nicotine Products"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "restricted_recreational.cannabis_products_where_legally_permitted",
+    "categoryName": "Cannabis Products (where legally permitted)",
+    "localizedNames": {
+      "en": "Cannabis Products (where legally permitted)"
+    },
+    "parentCategoryId": "restricted_recreational",
+    "description": "",
+    "icon": "no_drinks",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": true,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": true,
+    "classification": "restricted",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "beverages",
+    "categoryName": "Beverages & Refreshments",
+    "localizedNames": {
+      "en": "Beverages & Refreshments"
+    },
+    "parentCategoryId": null,
+    "description": "Non-alcoholic drinks.",
+    "icon": "local_drink",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.bottled_water",
+    "categoryName": "Bottled Water",
+    "localizedNames": {
+      "en": "Bottled Water"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "beverages.soft_drinks",
+    "categoryName": "Soft Drinks",
+    "localizedNames": {
+      "en": "Soft Drinks"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.juices",
+    "categoryName": "Juices",
+    "localizedNames": {
+      "en": "Juices"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.tea",
+    "categoryName": "Tea",
+    "localizedNames": {
+      "en": "Tea"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.coffee",
+    "categoryName": "Coffee",
+    "localizedNames": {
+      "en": "Coffee"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.energy_drinks",
+    "categoryName": "Energy Drinks",
+    "localizedNames": {
+      "en": "Energy Drinks"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.sports_drinks",
+    "categoryName": "Sports Drinks",
+    "localizedNames": {
+      "en": "Sports Drinks"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.milk_and_milkshakes",
+    "categoryName": "Milk & Milkshakes",
+    "localizedNames": {
+      "en": "Milk & Milkshakes"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "beverages.smoothies",
+    "categoryName": "Smoothies",
+    "localizedNames": {
+      "en": "Smoothies"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.non_alcoholic_mocktails",
+    "categoryName": "Non-alcoholic Mocktails",
+    "localizedNames": {
+      "en": "Non-alcoholic Mocktails"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "beverages.packaged_beverages",
+    "categoryName": "Packaged Beverages",
+    "localizedNames": {
+      "en": "Packaged Beverages"
+    },
+    "parentCategoryId": "beverages",
+    "description": "",
+    "icon": "local_drink",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "education",
+    "categoryName": "Education & Learning",
+    "localizedNames": {
+      "en": "Education & Learning"
+    },
+    "parentCategoryId": null,
+    "description": "Fees, supplies and learning tools.",
+    "icon": "school",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.school_fees",
+    "categoryName": "School Fees",
+    "localizedNames": {
+      "en": "School Fees"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.college_fees",
+    "categoryName": "College Fees",
+    "localizedNames": {
+      "en": "College Fees"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.university_tuition",
+    "categoryName": "University Tuition",
+    "localizedNames": {
+      "en": "University Tuition"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.examination_fees",
+    "categoryName": "Examination Fees",
+    "localizedNames": {
+      "en": "Examination Fees"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.coaching_classes",
+    "categoryName": "Coaching Classes",
+    "localizedNames": {
+      "en": "Coaching Classes"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.competitive_exam_preparation",
+    "categoryName": "Competitive Exam Preparation",
+    "localizedNames": {
+      "en": "Competitive Exam Preparation"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.books_and_notebooks",
+    "categoryName": "Books & Notebooks",
+    "localizedNames": {
+      "en": "Books & Notebooks"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.school_uniforms",
+    "categoryName": "School Uniforms",
+    "localizedNames": {
+      "en": "School Uniforms"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.stationery",
+    "categoryName": "Stationery",
+    "localizedNames": {
+      "en": "Stationery"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.laptops_and_tablets_for_education",
+    "categoryName": "Laptops & Tablets for Education",
+    "localizedNames": {
+      "en": "Laptops & Tablets for Education"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.internet_for_online_learning",
+    "categoryName": "Internet for Online Learning",
+    "localizedNames": {
+      "en": "Internet for Online Learning"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.online_courses",
+    "categoryName": "Online Courses",
+    "localizedNames": {
+      "en": "Online Courses"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.vocational_training",
+    "categoryName": "Vocational Training",
+    "localizedNames": {
+      "en": "Vocational Training"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.skill_development",
+    "categoryName": "Skill Development",
+    "localizedNames": {
+      "en": "Skill Development"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.educational_travel",
+    "categoryName": "Educational Travel",
+    "localizedNames": {
+      "en": "Educational Travel"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "education.special_education",
+    "categoryName": "Special Education",
+    "localizedNames": {
+      "en": "Special Education"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "education.scholarships",
+    "categoryName": "Scholarships",
+    "localizedNames": {
+      "en": "Scholarships"
+    },
+    "parentCategoryId": "education",
+    "description": "",
+    "icon": "school",
+    "displayOrder": 170,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "housing",
+    "categoryName": "Housing & Household Expenses",
+    "localizedNames": {
+      "en": "Housing & Household Expenses"
+    },
+    "parentCategoryId": null,
+    "description": "Rent, utilities and essential home costs.",
+    "icon": "home",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.house_rent",
+    "categoryName": "House Rent",
+    "localizedNames": {
+      "en": "House Rent"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.security_deposit",
+    "categoryName": "Security Deposit",
+    "localizedNames": {
+      "en": "Security Deposit"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "housing.electricity_bills",
+    "categoryName": "Electricity Bills",
+    "localizedNames": {
+      "en": "Electricity Bills"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.water_bills",
+    "categoryName": "Water Bills",
+    "localizedNames": {
+      "en": "Water Bills"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.gas_bills",
+    "categoryName": "Gas Bills",
+    "localizedNames": {
+      "en": "Gas Bills"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.internet_bills",
+    "categoryName": "Internet Bills",
+    "localizedNames": {
+      "en": "Internet Bills"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.mobile_bills",
+    "categoryName": "Mobile Bills",
+    "localizedNames": {
+      "en": "Mobile Bills"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.home_repairs",
+    "categoryName": "Home Repairs",
+    "localizedNames": {
+      "en": "Home Repairs"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.plumbing",
+    "categoryName": "Plumbing",
+    "localizedNames": {
+      "en": "Plumbing"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.electrical_repairs",
+    "categoryName": "Electrical Repairs",
+    "localizedNames": {
+      "en": "Electrical Repairs"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.essential_appliances",
+    "categoryName": "Essential Appliances",
+    "localizedNames": {
+      "en": "Essential Appliances"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.furniture",
+    "categoryName": "Furniture",
+    "localizedNames": {
+      "en": "Furniture"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "housing.bedding_and_mattresses",
+    "categoryName": "Bedding & Mattresses",
+    "localizedNames": {
+      "en": "Bedding & Mattresses"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.kitchen_essentials",
+    "categoryName": "Kitchen Essentials",
+    "localizedNames": {
+      "en": "Kitchen Essentials"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.cleaning_supplies",
+    "categoryName": "Cleaning Supplies",
+    "localizedNames": {
+      "en": "Cleaning Supplies"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.pest_control",
+    "categoryName": "Pest Control",
+    "localizedNames": {
+      "en": "Pest Control"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.household_maintenance",
+    "categoryName": "Household Maintenance",
+    "localizedNames": {
+      "en": "Household Maintenance"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 170,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.temporary_shelter",
+    "categoryName": "Temporary Shelter",
+    "localizedNames": {
+      "en": "Temporary Shelter"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 180,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "housing.homelessness_support",
+    "categoryName": "Homelessness Support",
+    "localizedNames": {
+      "en": "Homelessness Support"
+    },
+    "parentCategoryId": "housing",
+    "description": "",
+    "icon": "home",
+    "displayOrder": 190,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport",
+    "categoryName": "Transportation & Travel",
+    "localizedNames": {
+      "en": "Transportation & Travel"
+    },
+    "parentCategoryId": null,
+    "description": "Getting to school, work and care.",
+    "icon": "directions_bus",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.bus_tickets",
+    "categoryName": "Bus Tickets",
+    "localizedNames": {
+      "en": "Bus Tickets"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.train_tickets",
+    "categoryName": "Train Tickets",
+    "localizedNames": {
+      "en": "Train Tickets"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.metro_tickets",
+    "categoryName": "Metro Tickets",
+    "localizedNames": {
+      "en": "Metro Tickets"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.taxi_and_cab_fares",
+    "categoryName": "Taxi & Cab Fares",
+    "localizedNames": {
+      "en": "Taxi & Cab Fares"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "transport.auto_rickshaw_fares",
+    "categoryName": "Auto-Rickshaw Fares",
+    "localizedNames": {
+      "en": "Auto-Rickshaw Fares"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.fuel",
+    "categoryName": "Fuel",
+    "localizedNames": {
+      "en": "Fuel"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.electric_vehicle_charging",
+    "categoryName": "Electric Vehicle Charging",
+    "localizedNames": {
+      "en": "Electric Vehicle Charging"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.vehicle_repairs",
+    "categoryName": "Vehicle Repairs",
+    "localizedNames": {
+      "en": "Vehicle Repairs"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.vehicle_insurance",
+    "categoryName": "Vehicle Insurance",
+    "localizedNames": {
+      "en": "Vehicle Insurance"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "transport.bicycle_repairs",
+    "categoryName": "Bicycle Repairs",
+    "localizedNames": {
+      "en": "Bicycle Repairs"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.school_transport",
+    "categoryName": "School Transport",
+    "localizedNames": {
+      "en": "School Transport"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.medical_transport",
+    "categoryName": "Medical Transport",
+    "localizedNames": {
+      "en": "Medical Transport"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.flight_tickets",
+    "categoryName": "Flight Tickets",
+    "localizedNames": {
+      "en": "Flight Tickets"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "transport.hotel_stays",
+    "categoryName": "Hotel Stays",
+    "localizedNames": {
+      "en": "Hotel Stays"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "transport.emergency_travel",
+    "categoryName": "Emergency Travel",
+    "localizedNames": {
+      "en": "Emergency Travel"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "transport.public_transport_passes",
+    "categoryName": "Public Transport Passes",
+    "localizedNames": {
+      "en": "Public Transport Passes"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "transport.toll_and_parking_fees",
+    "categoryName": "Toll & Parking Fees",
+    "localizedNames": {
+      "en": "Toll & Parking Fees"
+    },
+    "parentCategoryId": "transport",
+    "description": "",
+    "icon": "directions_bus",
+    "displayOrder": 170,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family",
+    "categoryName": "Family & Personal Needs",
+    "localizedNames": {
+      "en": "Family & Personal Needs"
+    },
+    "parentCategoryId": null,
+    "description": "Everyday needs for families and individuals.",
+    "icon": "family_restroom",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.baby_products",
+    "categoryName": "Baby Products",
+    "localizedNames": {
+      "en": "Baby Products"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.diapers_and_infant_care",
+    "categoryName": "Diapers & Infant Care",
+    "localizedNames": {
+      "en": "Diapers & Infant Care"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.childcare",
+    "categoryName": "Childcare",
+    "localizedNames": {
+      "en": "Childcare"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.elderly_care",
+    "categoryName": "Elderly Care",
+    "localizedNames": {
+      "en": "Elderly Care"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.clothing",
+    "categoryName": "Clothing",
+    "localizedNames": {
+      "en": "Clothing"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.footwear",
+    "categoryName": "Footwear",
+    "localizedNames": {
+      "en": "Footwear"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.winter_wear",
+    "categoryName": "Winter Wear",
+    "localizedNames": {
+      "en": "Winter Wear"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.hygiene_products",
+    "categoryName": "Hygiene Products",
+    "localizedNames": {
+      "en": "Hygiene Products"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.sanitary_products",
+    "categoryName": "Sanitary Products",
+    "localizedNames": {
+      "en": "Sanitary Products"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.personal_care",
+    "categoryName": "Personal Care",
+    "localizedNames": {
+      "en": "Personal Care"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.laundry",
+    "categoryName": "Laundry",
+    "localizedNames": {
+      "en": "Laundry"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.haircuts_and_grooming",
+    "categoryName": "Haircuts & Grooming",
+    "localizedNames": {
+      "en": "Haircuts & Grooming"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "family.essential_household_supplies",
+    "categoryName": "Essential Household Supplies",
+    "localizedNames": {
+      "en": "Essential Household Supplies"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.family_emergency_expenses",
+    "categoryName": "Family Emergency Expenses",
+    "localizedNames": {
+      "en": "Family Emergency Expenses"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "family.funeral_and_bereavement_expenses",
+    "categoryName": "Funeral & Bereavement Expenses",
+    "localizedNames": {
+      "en": "Funeral & Bereavement Expenses"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "family.marriage_related_essential_expenses",
+    "categoryName": "Marriage-Related Essential Expenses",
+    "localizedNames": {
+      "en": "Marriage-Related Essential Expenses"
+    },
+    "parentCategoryId": "family",
+    "description": "",
+    "icon": "family_restroom",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "livelihood",
+    "categoryName": "Employment & Livelihood",
+    "localizedNames": {
+      "en": "Employment & Livelihood"
+    },
+    "parentCategoryId": null,
+    "description": "Costs of finding work and earning a living.",
+    "icon": "work",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.job_application_fees",
+    "categoryName": "Job Application Fees",
+    "localizedNames": {
+      "en": "Job Application Fees"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.professional_certification",
+    "categoryName": "Professional Certification",
+    "localizedNames": {
+      "en": "Professional Certification"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.work_uniforms",
+    "categoryName": "Work Uniforms",
+    "localizedNames": {
+      "en": "Work Uniforms"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.safety_equipment",
+    "categoryName": "Safety Equipment",
+    "localizedNames": {
+      "en": "Safety Equipment"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.work_tools",
+    "categoryName": "Work Tools",
+    "localizedNames": {
+      "en": "Work Tools"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.professional_software",
+    "categoryName": "Professional Software",
+    "localizedNames": {
+      "en": "Professional Software"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.internet_for_remote_work",
+    "categoryName": "Internet for Remote Work",
+    "localizedNames": {
+      "en": "Internet for Remote Work"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.work_related_travel",
+    "categoryName": "Work-Related Travel",
+    "localizedNames": {
+      "en": "Work-Related Travel"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.business_registration_fees",
+    "categoryName": "Business Registration Fees",
+    "localizedNames": {
+      "en": "Business Registration Fees"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.small_business_supplies",
+    "categoryName": "Small Business Supplies",
+    "localizedNames": {
+      "en": "Small Business Supplies"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.vendor_and_artisan_expenses",
+    "categoryName": "Vendor & Artisan Expenses",
+    "localizedNames": {
+      "en": "Vendor & Artisan Expenses"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.agricultural_inputs",
+    "categoryName": "Agricultural Inputs",
+    "localizedNames": {
+      "en": "Agricultural Inputs"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.seeds_and_fertilizers",
+    "categoryName": "Seeds & Fertilizers",
+    "localizedNames": {
+      "en": "Seeds & Fertilizers"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.farming_equipment",
+    "categoryName": "Farming Equipment",
+    "localizedNames": {
+      "en": "Farming Equipment"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.livestock_care",
+    "categoryName": "Livestock Care",
+    "localizedNames": {
+      "en": "Livestock Care"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "livelihood.market_stall_fees",
+    "categoryName": "Market Stall Fees",
+    "localizedNames": {
+      "en": "Market Stall Fees"
+    },
+    "parentCategoryId": "livelihood",
+    "description": "",
+    "icon": "work",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "finance_legal",
+    "categoryName": "Finance, Insurance & Legal",
+    "localizedNames": {
+      "en": "Finance, Insurance & Legal"
+    },
+    "parentCategoryId": null,
+    "description": "Insurance, legal help and fees. Debt and taxes are classified separately and reviewed.",
+    "icon": "account_balance",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.bank_charges",
+    "categoryName": "Bank Charges",
+    "localizedNames": {
+      "en": "Bank Charges"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "debt",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.loan_repayment",
+    "categoryName": "Loan Repayment",
+    "localizedNames": {
+      "en": "Loan Repayment"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "debt",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.credit_card_bills",
+    "categoryName": "Credit Card Bills",
+    "localizedNames": {
+      "en": "Credit Card Bills"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "debt",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.insurance_premiums",
+    "categoryName": "Insurance Premiums",
+    "localizedNames": {
+      "en": "Insurance Premiums"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.life_insurance",
+    "categoryName": "Life Insurance",
+    "localizedNames": {
+      "en": "Life Insurance"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.health_insurance",
+    "categoryName": "Health Insurance",
+    "localizedNames": {
+      "en": "Health Insurance"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.vehicle_insurance",
+    "categoryName": "Vehicle Insurance",
+    "localizedNames": {
+      "en": "Vehicle Insurance"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.legal_consultation",
+    "categoryName": "Legal Consultation",
+    "localizedNames": {
+      "en": "Legal Consultation"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "finance_legal.document_preparation",
+    "categoryName": "Document Preparation",
+    "localizedNames": {
+      "en": "Document Preparation"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "finance_legal.government_application_fees",
+    "categoryName": "Government Application Fees",
+    "localizedNames": {
+      "en": "Government Application Fees"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "finance_legal.passport_and_visa_fees",
+    "categoryName": "Passport & Visa Fees",
+    "localizedNames": {
+      "en": "Passport & Visa Fees"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.tax_payments",
+    "categoryName": "Tax Payments",
+    "localizedNames": {
+      "en": "Tax Payments"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "tax",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "finance_legal.court_related_expenses",
+    "categoryName": "Court-Related Expenses",
+    "localizedNames": {
+      "en": "Court-Related Expenses"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "finance_legal.financial_counselling",
+    "categoryName": "Financial Counselling",
+    "localizedNames": {
+      "en": "Financial Counselling"
+    },
+    "parentCategoryId": "finance_legal",
+    "description": "",
+    "icon": "account_balance",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology",
+    "categoryName": "Technology & Communications",
+    "localizedNames": {
+      "en": "Technology & Communications"
+    },
+    "parentCategoryId": null,
+    "description": "Staying connected.",
+    "icon": "smartphone",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.mobile_recharge",
+    "categoryName": "Mobile Recharge",
+    "localizedNames": {
+      "en": "Mobile Recharge"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.postpaid_mobile_bills",
+    "categoryName": "Postpaid Mobile Bills",
+    "localizedNames": {
+      "en": "Postpaid Mobile Bills"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.broadband_and_wi_fi",
+    "categoryName": "Broadband & Wi-Fi",
+    "localizedNames": {
+      "en": "Broadband & Wi-Fi"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.laptop_repairs",
+    "categoryName": "Laptop Repairs",
+    "localizedNames": {
+      "en": "Laptop Repairs"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.phone_repairs",
+    "categoryName": "Phone Repairs",
+    "localizedNames": {
+      "en": "Phone Repairs"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.computer_accessories",
+    "categoryName": "Computer Accessories",
+    "localizedNames": {
+      "en": "Computer Accessories"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "technology.software_subscriptions",
+    "categoryName": "Software Subscriptions",
+    "localizedNames": {
+      "en": "Software Subscriptions"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "technology.cloud_storage",
+    "categoryName": "Cloud Storage",
+    "localizedNames": {
+      "en": "Cloud Storage"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "technology.assistive_technology",
+    "categoryName": "Assistive Technology",
+    "localizedNames": {
+      "en": "Assistive Technology"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.digital_learning_tools",
+    "categoryName": "Digital Learning Tools",
+    "localizedNames": {
+      "en": "Digital Learning Tools"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "technology.data_packs",
+    "categoryName": "Data Packs",
+    "localizedNames": {
+      "en": "Data Packs"
+    },
+    "parentCategoryId": "technology",
+    "description": "",
+    "icon": "smartphone",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "recreation",
+    "categoryName": "Fitness, Sports & Recreation",
+    "localizedNames": {
+      "en": "Fitness, Sports & Recreation"
+    },
+    "parentCategoryId": null,
+    "description": "Discretionary entertainment and activities, kept separate from essentials.",
+    "icon": "sports_soccer",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.gym_membership",
+    "categoryName": "Gym Membership",
+    "localizedNames": {
+      "en": "Gym Membership"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.sports_equipment",
+    "categoryName": "Sports Equipment",
+    "localizedNames": {
+      "en": "Sports Equipment"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.sports_club_fees",
+    "categoryName": "Sports Club Fees",
+    "localizedNames": {
+      "en": "Sports Club Fees"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.swimming_classes",
+    "categoryName": "Swimming Classes",
+    "localizedNames": {
+      "en": "Swimming Classes"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.yoga_classes",
+    "categoryName": "Yoga Classes",
+    "localizedNames": {
+      "en": "Yoga Classes"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.dance_classes",
+    "categoryName": "Dance Classes",
+    "localizedNames": {
+      "en": "Dance Classes"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.music_lessons",
+    "categoryName": "Music Lessons",
+    "localizedNames": {
+      "en": "Music Lessons"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.art_classes",
+    "categoryName": "Art Classes",
+    "localizedNames": {
+      "en": "Art Classes"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.children_s_activities",
+    "categoryName": "Children's Activities",
+    "localizedNames": {
+      "en": "Children's Activities"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.recreational_tickets",
+    "categoryName": "Recreational Tickets",
+    "localizedNames": {
+      "en": "Recreational Tickets"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "recreation.gaming_purchases",
+    "categoryName": "Gaming Purchases",
+    "localizedNames": {
+      "en": "Gaming Purchases"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "recreation.streaming_subscriptions",
+    "categoryName": "Streaming Subscriptions",
+    "localizedNames": {
+      "en": "Streaming Subscriptions"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "recreation.hobbies_and_crafts",
+    "categoryName": "Hobbies & Crafts",
+    "localizedNames": {
+      "en": "Hobbies & Crafts"
+    },
+    "parentCategoryId": "recreation",
+    "description": "",
+    "icon": "sports_soccer",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events",
+    "categoryName": "Events, Hospitality & Celebrations",
+    "localizedNames": {
+      "en": "Events, Hospitality & Celebrations"
+    },
+    "parentCategoryId": null,
+    "description": "Celebrations and gatherings.",
+    "icon": "celebration",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.birthday_celebrations",
+    "categoryName": "Birthday Celebrations",
+    "localizedNames": {
+      "en": "Birthday Celebrations"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.weddings",
+    "categoryName": "Weddings",
+    "localizedNames": {
+      "en": "Weddings"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.catering",
+    "categoryName": "Catering",
+    "localizedNames": {
+      "en": "Catering"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.banquet_hall_bills",
+    "categoryName": "Banquet Hall Bills",
+    "localizedNames": {
+      "en": "Banquet Hall Bills"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "events.event_venue_rentals",
+    "categoryName": "Event Venue Rentals",
+    "localizedNames": {
+      "en": "Event Venue Rentals"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "events.decorations",
+    "categoryName": "Decorations",
+    "localizedNames": {
+      "en": "Decorations"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.photography",
+    "categoryName": "Photography",
+    "localizedNames": {
+      "en": "Photography"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "events.community_events",
+    "categoryName": "Community Events",
+    "localizedNames": {
+      "en": "Community Events"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.religious_and_cultural_events",
+    "categoryName": "Religious & Cultural Events",
+    "localizedNames": {
+      "en": "Religious & Cultural Events"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.festival_supplies",
+    "categoryName": "Festival Supplies",
+    "localizedNames": {
+      "en": "Festival Supplies"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "events.travel_for_family_events",
+    "categoryName": "Travel for Family Events",
+    "localizedNames": {
+      "en": "Travel for Family Events"
+    },
+    "parentCategoryId": "events",
+    "description": "",
+    "icon": "celebration",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity",
+    "categoryName": "Charity, Community & Social Welfare",
+    "localizedNames": {
+      "en": "Charity, Community & Social Welfare"
+    },
+    "parentCategoryId": null,
+    "description": "Community programmes. Organisations are verified before funding.",
+    "icon": "volunteer_activism",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.ngo_expenses",
+    "categoryName": "NGO Expenses",
+    "localizedNames": {
+      "en": "NGO Expenses"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.orphanage_supplies",
+    "categoryName": "Orphanage Supplies",
+    "localizedNames": {
+      "en": "Orphanage Supplies"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.old_age_home_supplies",
+    "categoryName": "Old-Age Home Supplies",
+    "localizedNames": {
+      "en": "Old-Age Home Supplies"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.disability_support",
+    "categoryName": "Disability Support",
+    "localizedNames": {
+      "en": "Disability Support"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.disaster_relief",
+    "categoryName": "Disaster Relief",
+    "localizedNames": {
+      "en": "Disaster Relief"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.food_distribution",
+    "categoryName": "Food Distribution",
+    "localizedNames": {
+      "en": "Food Distribution"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.clothing_donations",
+    "categoryName": "Clothing Donations",
+    "localizedNames": {
+      "en": "Clothing Donations"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.animal_rescue",
+    "categoryName": "Animal Rescue",
+    "localizedNames": {
+      "en": "Animal Rescue"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.community_healthcare",
+    "categoryName": "Community Healthcare",
+    "localizedNames": {
+      "en": "Community Healthcare"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.community_education",
+    "categoryName": "Community Education",
+    "localizedNames": {
+      "en": "Community Education"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.clean_water_projects",
+    "categoryName": "Clean Water Projects",
+    "localizedNames": {
+      "en": "Clean Water Projects"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 110,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.sanitation_projects",
+    "categoryName": "Sanitation Projects",
+    "localizedNames": {
+      "en": "Sanitation Projects"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 120,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.shelter_and_rehabilitation",
+    "categoryName": "Shelter & Rehabilitation",
+    "localizedNames": {
+      "en": "Shelter & Rehabilitation"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 130,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.rural_development",
+    "categoryName": "Rural Development",
+    "localizedNames": {
+      "en": "Rural Development"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 140,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "charity.environmental_projects",
+    "categoryName": "Environmental Projects",
+    "localizedNames": {
+      "en": "Environmental Projects"
+    },
+    "parentCategoryId": "charity",
+    "description": "",
+    "icon": "volunteer_activism",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "government",
+    "categoryName": "Government & Essential Services",
+    "localizedNames": {
+      "en": "Government & Essential Services"
+    },
+    "parentCategoryId": null,
+    "description": "Public service fees and arrears.",
+    "icon": "gavel",
+    "displayOrder": 150,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.utility_arrears",
+    "categoryName": "Utility Arrears",
+    "localizedNames": {
+      "en": "Utility Arrears"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.municipal_bills",
+    "categoryName": "Municipal Bills",
+    "localizedNames": {
+      "en": "Municipal Bills"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.public_service_fees",
+    "categoryName": "Public Service Fees",
+    "localizedNames": {
+      "en": "Public Service Fees"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.birth_and_death_certificates",
+    "categoryName": "Birth & Death Certificates",
+    "localizedNames": {
+      "en": "Birth & Death Certificates"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.identity_document_fees",
+    "categoryName": "Identity Document Fees",
+    "localizedNames": {
+      "en": "Identity Document Fees"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.permits_and_licences",
+    "categoryName": "Permits & Licences",
+    "localizedNames": {
+      "en": "Permits & Licences"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.essential_government_charges",
+    "categoryName": "Essential Government Charges",
+    "localizedNames": {
+      "en": "Essential Government Charges"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "government.emergency_relief_fees",
+    "categoryName": "Emergency Relief Fees",
+    "localizedNames": {
+      "en": "Emergency Relief Fees"
+    },
+    "parentCategoryId": "government",
+    "description": "",
+    "icon": "gavel",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets",
+    "categoryName": "Pets & Animal Welfare",
+    "localizedNames": {
+      "en": "Pets & Animal Welfare"
+    },
+    "parentCategoryId": null,
+    "description": "Care for pets, livestock and rescued animals.",
+    "icon": "pets",
+    "displayOrder": 160,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.pet_food",
+    "categoryName": "Pet Food",
+    "localizedNames": {
+      "en": "Pet Food"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.veterinary_bills",
+    "categoryName": "Veterinary Bills",
+    "localizedNames": {
+      "en": "Veterinary Bills"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.vaccinations",
+    "categoryName": "Vaccinations",
+    "localizedNames": {
+      "en": "Vaccinations"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.pet_medicines",
+    "categoryName": "Pet Medicines",
+    "localizedNames": {
+      "en": "Pet Medicines"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.pet_grooming",
+    "categoryName": "Pet Grooming",
+    "localizedNames": {
+      "en": "Pet Grooming"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "pets.animal_rescue",
+    "categoryName": "Animal Rescue",
+    "localizedNames": {
+      "en": "Animal Rescue"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.animal_shelter_expenses",
+    "categoryName": "Animal Shelter Expenses",
+    "localizedNames": {
+      "en": "Animal Shelter Expenses"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.livestock_treatment",
+    "categoryName": "Livestock Treatment",
+    "localizedNames": {
+      "en": "Livestock Treatment"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "pets.animal_shelter_supplies",
+    "categoryName": "Animal Shelter Supplies",
+    "localizedNames": {
+      "en": "Animal Shelter Supplies"
+    },
+    "parentCategoryId": "pets",
+    "description": "",
+    "icon": "pets",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": false,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "tourism",
+    "categoryName": "Tourism & Accommodation",
+    "localizedNames": {
+      "en": "Tourism & Accommodation"
+    },
+    "parentCategoryId": null,
+    "description": "Stays and travel. Emergency and student housing are essential.",
+    "icon": "hotel",
+    "displayOrder": 170,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "tourism.hotel_bills",
+    "categoryName": "Hotel Bills",
+    "localizedNames": {
+      "en": "Hotel Bills"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "tourism.hostel_fees",
+    "categoryName": "Hostel Fees",
+    "localizedNames": {
+      "en": "Hostel Fees"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "tourism.guesthouse_bills",
+    "categoryName": "Guesthouse Bills",
+    "localizedNames": {
+      "en": "Guesthouse Bills"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "tourism.homestays",
+    "categoryName": "Homestays",
+    "localizedNames": {
+      "en": "Homestays"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "tourism.emergency_accommodation",
+    "categoryName": "Emergency Accommodation",
+    "localizedNames": {
+      "en": "Emergency Accommodation"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "tourism.student_hostel_fees",
+    "categoryName": "Student Hostel Fees",
+    "localizedNames": {
+      "en": "Student Hostel Fees"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "eligible"
+  },
+  {
+    "categoryId": "tourism.travel_bookings",
+    "categoryName": "Travel Bookings",
+    "localizedNames": {
+      "en": "Travel Bookings"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "tourism.tour_packages",
+    "categoryName": "Tour Packages",
+    "localizedNames": {
+      "en": "Tour Packages"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "tourism.local_experiences",
+    "categoryName": "Local Experiences",
+    "localizedNames": {
+      "en": "Local Experiences"
+    },
+    "parentCategoryId": "tourism",
+    "description": "",
+    "icon": "hotel",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "retail",
+    "categoryName": "Shopping & Retail",
+    "localizedNames": {
+      "en": "Shopping & Retail"
+    },
+    "parentCategoryId": null,
+    "description": "Retail purchases. Luxury items are excluded from essential recommendations.",
+    "icon": "shopping_bag",
+    "displayOrder": 180,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.clothing_stores",
+    "categoryName": "Clothing Stores",
+    "localizedNames": {
+      "en": "Clothing Stores"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.footwear_stores",
+    "categoryName": "Footwear Stores",
+    "localizedNames": {
+      "en": "Footwear Stores"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.electronics",
+    "categoryName": "Electronics",
+    "localizedNames": {
+      "en": "Electronics"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.home_goods",
+    "categoryName": "Home Goods",
+    "localizedNames": {
+      "en": "Home Goods"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.department_stores",
+    "categoryName": "Department Stores",
+    "localizedNames": {
+      "en": "Department Stores"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.online_shopping",
+    "categoryName": "Online Shopping",
+    "localizedNames": {
+      "en": "Online Shopping"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 60,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "retail.gifts",
+    "categoryName": "Gifts",
+    "localizedNames": {
+      "en": "Gifts"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 70,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "retail.jewellery",
+    "categoryName": "Jewellery",
+    "localizedNames": {
+      "en": "Jewellery"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 80,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "retail.luxury_goods",
+    "categoryName": "Luxury Goods",
+    "localizedNames": {
+      "en": "Luxury Goods"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 90,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "luxury",
+    "fundingEligibility": "restricted"
+  },
+  {
+    "categoryId": "retail.accessories",
+    "categoryName": "Accessories",
+    "localizedNames": {
+      "en": "Accessories"
+    },
+    "parentCategoryId": "retail",
+    "description": "",
+    "icon": "shopping_bag",
+    "displayOrder": 100,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "other",
+    "categoryName": "Other & Custom Categories",
+    "localizedNames": {
+      "en": "Other & Custom Categories"
+    },
+    "parentCategoryId": null,
+    "description": "Anything else. Always reviewed.",
+    "icon": "more_horiz",
+    "displayOrder": 190,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "other.miscellaneous_bills",
+    "categoryName": "Miscellaneous Bills",
+    "localizedNames": {
+      "en": "Miscellaneous Bills"
+    },
+    "parentCategoryId": "other",
+    "description": "",
+    "icon": "more_horiz",
+    "displayOrder": 10,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "other.other_essential_expenses",
+    "categoryName": "Other Essential Expenses",
+    "localizedNames": {
+      "en": "Other Essential Expenses"
+    },
+    "parentCategoryId": "other",
+    "description": "",
+    "icon": "more_horiz",
+    "displayOrder": 20,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "other.other_non_essential_expenses",
+    "categoryName": "Other Non-Essential Expenses",
+    "localizedNames": {
+      "en": "Other Non-Essential Expenses"
+    },
+    "parentCategoryId": "other",
+    "description": "",
+    "icon": "more_horiz",
+    "displayOrder": 30,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "discretionary",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "other.custom_user_category",
+    "categoryName": "Custom User Category",
+    "localizedNames": {
+      "en": "Custom User Category"
+    },
+    "parentCategoryId": "other",
+    "description": "",
+    "icon": "more_horiz",
+    "displayOrder": 40,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  },
+  {
+    "categoryId": "other.unclassified_receipt",
+    "categoryName": "Unclassified Receipt",
+    "localizedNames": {
+      "en": "Unclassified Receipt"
+    },
+    "parentCategoryId": "other",
+    "description": "",
+    "icon": "more_horiz",
+    "displayOrder": 50,
+    "isActive": true,
+    "requiresAgeVerification": false,
+    "requiresManualReview": true,
+    "legalJurisdictionsOnly": false,
+    "classification": "essential",
+    "fundingEligibility": "review"
+  }
+]

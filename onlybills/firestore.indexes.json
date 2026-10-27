@@ -1,0 +1,15 @@
+{
+  "indexes": [
+    { "collectionGroup": "bills", "queryScope": "COLLECTION", "fields": [
+      { "fieldPath": "verificationStatus", "order": "ASCENDING" },
+      { "fieldPath": "fundingEligibility", "order": "ASCENDING" },
+      { "fieldPath": "createdAt", "order": "DESCENDING" } ] },
+    { "collectionGroup": "bills", "queryScope": "COLLECTION", "fields": [
+      { "fieldPath": "verificationStatus", "order": "ASCENDING" },
+      { "fieldPath": "categoryId", "order": "ASCENDING" },
+      { "fieldPath": "createdAt", "order": "DESCENDING" } ] },
+    { "collectionGroup": "categories", "queryScope": "COLLECTION", "fields": [
+      { "fieldPath": "parentCategoryId", "order": "ASCENDING" },
+      { "fieldPath": "displayOrder", "order": "ASCENDING" } ] }
+  ]
+}

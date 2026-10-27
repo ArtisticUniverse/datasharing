@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function signedIn() { return request.auth != null; }
+    function isAdmin() { return signedIn() && request.auth.token.admin == true; }
+
+    // Categories and funding config are public-read, admin-write (via Cloud Functions).
+    match /categories/{id} { allow read: if true; allow write: if false; }
+    match /config/{id}     { allow read: if true; allow write: if false; }
+
+    // Bills: created/updated only by Cloud Functions (submitBill, fundBill, reviewBill).
+    // Donors can read bills that passed verification; owners and admins read their own/all.
+    match /bills/{billId} {
+      allow read: if isAdmin()
+        || (signedIn() && resource.data.userId == request.auth.uid)
+        || (signedIn() && resource.data.verificationStatus == 'verified');
+      allow write: if false;
+    }
+
+    match /donors/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      // Donors can edit their feed preferences but never their own age verification.
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && !request.resource.data.diff(resource == null ? {} : resource.data).affectedKeys()
+              .hasAny(['ageVerified', 'age', 'kycStatus']);
+    }
+
+    match /donations/{id}     { allow read: if isAdmin() || (signedIn() && resource.data.donorId == request.auth.uid); allow write: if false; }
+    match /payments/{id}      { allow read, write: if false; }
+    match /receiptHashes/{id} { allow read, write: if false; }
+    match /analytics/{id}     { allow read: if signedIn(); allow write: if false; }
+  }
+}
