@@ -9,24 +9,14 @@ import '../models/preferences.dart';
 import '../widgets/bill_card.dart';
 import '../widgets/category_icon.dart';
 import '../widgets/filter_sheet.dart';
+import '../widgets/pay_sheet.dart';
 
 class SwipeFeedScreen extends StatelessWidget {
   const SwipeFeedScreen({super.key});
 
   Future<void> _fund(BuildContext context, AppState s, Bill bill) async {
-    final amount = await showDialog<double>(context: context, builder: (_) => _FundDialog(bill: bill));
-    if (amount == null || !context.mounted) return;
-    final messenger = ScaffoldMessenger.of(context);
-    try {
-      final left = await s.repo.fundBill(bill.billId, amount);
-      messenger.showSnackBar(SnackBar(
-        content: Text(left <= 0
-            ? 'Thank you! This bill is now fully funded.'
-            : 'Thank you! ${formatMoney(left, bill.currency)} still needed.'),
-      ));
-    } catch (e) {
-      messenger.showSnackBar(SnackBar(content: Text('Could not fund: $e')));
-    }
+    final r = await showPaySheet(context, s.repo, bill);
+    if (r != null) s.paymentsChanged();
   }
 
   @override
@@ -206,64 +196,6 @@ class _SwipeableCardState extends State<_SwipeableCard> {
           ]),
         ),
       ),
-    );
-  }
-}
-
-class _FundDialog extends StatefulWidget {
-  final Bill bill;
-  const _FundDialog({required this.bill});
-
-  @override
-  State<_FundDialog> createState() => _FundDialogState();
-}
-
-class _FundDialogState extends State<_FundDialog> {
-  late final _ctrl = TextEditingController(text: _presets.first.toStringAsFixed(0));
-
-  List<double> get _presets {
-    final r = widget.bill.remainingAmount;
-    return {
-      for (final v in [100.0, 500.0, 1000.0])
-        if (v < r) v,
-      r
-    }.toList();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final b = widget.bill;
-    final value = double.tryParse(_ctrl.text) ?? 0;
-    final valid = value > 0 && value <= b.remainingAmount;
-    return AlertDialog(
-      title: Text('Fund ${b.merchantName}'),
-      content: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text('${formatMoney(b.remainingAmount, b.currency)} remaining'),
-        const SizedBox(height: 12),
-        Wrap(
-          spacing: 6,
-          children: _presets
-              .map((p) => ActionChip(
-                    label: Text(
-                        p == b.remainingAmount ? 'All (${formatMoney(p, b.currency)})' : formatMoney(p, b.currency)),
-                    onPressed: () => setState(() => _ctrl.text = p.toStringAsFixed(0)),
-                  ))
-              .toList(),
-        ),
-        TextField(
-          controller: _ctrl,
-          keyboardType: TextInputType.number,
-          decoration: const InputDecoration(prefixText: '₹ ', labelText: 'Amount'),
-          onChanged: (_) => setState(() {}),
-        ),
-        const SizedBox(height: 8),
-        Text('Funds are paid directly to the merchant or verified beneficiary, not to the uploader.',
-            style: Theme.of(context).textTheme.bodySmall),
-      ]),
-      actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
-        FilledButton(onPressed: valid ? () => Navigator.pop(context, value) : null, child: const Text('Fund')),
-      ],
     );
   }
 }

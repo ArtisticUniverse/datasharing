@@ -1,11 +1,15 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math' as math;
 
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/bill.dart';
 import '../models/category.dart';
+import '../models/payment.dart';
 import '../models/preferences.dart';
+import '../services/payment_engine.dart';
+import '../services/payment_gateway.dart';
 import '../services/receipt_scanner.dart';
 import 'repository.dart';
 
@@ -18,6 +22,10 @@ class DemoRepository implements Repository {
   late List<Map<String, dynamic>> _bills;
   DonorPreferences _prefs = const DonorPreferences();
   final _fingerprints = <String>{};
+  // Payment data: platform stats from the "nightly job" plus this donor's raw event log.
+  Map<String, dynamic> _globalStats = const {};
+  final List<Map<String, dynamic>> _paymentEvents = [];
+  final _gateway = SimulatedGateway(math.Random(7).nextDouble);
   bool _loaded = false;
 
   @override
@@ -31,6 +39,9 @@ class DemoRepository implements Repository {
         .cast<Map<String, dynamic>>()
         .map(Map<String, dynamic>.from)
         .toList();
+    final pay = jsonDecode(await rootBundle.loadString('assets/demo/payments.json')) as Map<String, dynamic>;
+    _globalStats = Map<String, dynamic>.from(pay['globalStats'] as Map);
+    _paymentEvents.addAll((pay['donorEvents'] as List).map((e) => Map<String, dynamic>.from(e as Map)));
     for (final b in _bills) {
       _fingerprints.add(_fingerprint(b['merchantName'], b['amount'], b['billDate']));
     }
@@ -128,16 +139,48 @@ class DemoRepository implements Repository {
     return SubmitResult(id, status, elig, flags);
   }
 
+  Map<String, dynamic> get _profile => PaymentEngine.buildDonorProfile(_paymentEvents);
+
   @override
-  Future<double> fundBill(String billId, double amount) async {
+  Future<Map<String, dynamic>?> loadPaymentProfile() async {
+    await _ensureLoaded();
+    return _profile;
+  }
+
+  @override
+  Future<CheckoutPlan> getCheckout(String billId, {double? amount}) async {
+    await _ensureLoaded();
     final b = _bills.firstWhere((b) => b['billId'] == billId);
     final remaining = (b['remainingAmount'] as num).toDouble();
-    final applied = amount.clamp(0, remaining).toDouble();
+    final amounts = PaymentEngine.suggestAmounts(_profile, remaining);
+    final forAmount = amount != null && amount > 0 ? math.min(amount, remaining) : amounts['defaultAmount'] as num;
+    return CheckoutPlan.fromMap({'amounts': amounts, 'methods': PaymentEngine.recommend(_profile, _globalStats, forAmount)});
+  }
+
+  @override
+  Future<PaymentResult> pay(String billId, double amount, String method) async {
+    final option = PaymentEngine.recommend(_profile, _globalStats, amount).firstWhere((m) => m['method'] == method);
+    final id = 'demo_pay_${_paymentEvents.length}';
+    final status = await _gateway.charge(option['expectedSuccess'] as double);
+    _paymentEvents.add({
+      'paymentId': id,
+      'method': method,
+      'amount': amount,
+      'status': status == PaymentStatus.captured ? 'captured' : 'failed',
+      'at': DateTime.now().millisecondsSinceEpoch,
+    });
+    if (status != PaymentStatus.captured) {
+      return const PaymentResult(PaymentStatus.failed, message: 'The bank declined this payment. No money was taken.');
+    }
+    final b = _bills.firstWhere((b) => b['billId'] == billId);
+    final remaining = (b['remainingAmount'] as num).toDouble();
+    final applied = math.min(amount, remaining);
     b['fundedAmount'] = (b['fundedAmount'] as num).toDouble() + applied;
     b['remainingAmount'] = remaining - applied;
     b['fundingStatus'] = remaining - applied <= 0 ? 'funded' : 'partially_funded';
     _emit();
-    return remaining - applied;
+    return PaymentResult(PaymentStatus.captured,
+        applied: applied, refundDue: amount - applied, remainingAmount: remaining - applied);
   }
 
   @override

@@ -15,17 +15,27 @@ class AnalyticsScreen extends StatefulWidget {
 
 class _AnalyticsScreenState extends State<AnalyticsScreen> {
   late Future<List<CategoryAnalytics>> _future = context.read<AppState>().repo.loadAnalytics();
+  late Future<Map<String, dynamic>?> _profile = context.read<AppState>().repo.loadPaymentProfile();
+  int _seenPayments = 0;
 
   @override
   Widget build(BuildContext context) {
     final s = context.watch<AppState>();
+    if (s.paymentsVersion != _seenPayments) {
+      _seenPayments = s.paymentsVersion;
+      _future = s.repo.loadAnalytics();
+      _profile = s.repo.loadPaymentProfile();
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('Impact'),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: () => setState(() => _future = s.repo.loadAnalytics()),
+            onPressed: () => setState(() {
+              _future = s.repo.loadAnalytics();
+              _profile = s.repo.loadPaymentProfile();
+            }),
           ),
         ],
       ),
@@ -42,6 +52,12 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
           return LayoutBuilder(builder: (context, box) {
             final cols = box.maxWidth > 700 ? 4 : 2;
             return ListView(padding: const EdgeInsets.all(16), children: [
+              FutureBuilder<Map<String, dynamic>?>(
+                future: _profile,
+                builder: (context, p) => p.data == null || p.data!['totalDonations'] == 0
+                    ? const SizedBox.shrink()
+                    : _YourGiving(p.data!),
+              ),
               GridView.count(
                 crossAxisCount: cols,
                 shrinkWrap: true,
@@ -111,4 +127,57 @@ class _Stat extends StatelessWidget {
               ]),
         ),
       );
+}
+
+/// Summary of the donor's own payment profile from the data pipeline.
+class _YourGiving extends StatelessWidget {
+  final Map<String, dynamic> profile;
+  const _YourGiving(this.profile);
+
+  static const _labels = {'upi': 'UPI', 'card': 'Card', 'netbanking': 'Net banking', 'wallet': 'Wallet'};
+
+  @override
+  Widget build(BuildContext context) {
+    final t = Theme.of(context).textTheme;
+    final stats = Map<String, dynamic>.from(profile['methodStats'] as Map? ?? const {});
+    final median = profile['medianAmount'] as num?;
+    return Card(
+      margin: const EdgeInsets.only(bottom: 16),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text('Your giving', style: t.titleMedium),
+          const SizedBox(height: 4),
+          Text(
+            '${profile['totalDonations']} donations · ${formatMoney((profile['totalAmount'] as num).toDouble(), 'INR')} in total'
+            '${median != null ? ' · usually ${formatMoney(median.toDouble(), 'INR')}' : ''}',
+            style: t.bodyMedium,
+          ),
+          const SizedBox(height: 12),
+          for (final e in stats.entries)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 2),
+              child: Row(children: [
+                SizedBox(width: 96, child: Text(_labels[e.key] ?? e.key)),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: (e.value['captured'] as num) / (e.value['attempts'] as num),
+                    minHeight: 6,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                SizedBox(
+                  width: 72,
+                  child: Text('${e.value['captured']}/${e.value['attempts']} paid',
+                      textAlign: TextAlign.end, style: t.bodySmall),
+                ),
+              ]),
+            ),
+          const SizedBox(height: 8),
+          Text('We use this to pre-select the amount and payment method most likely to work for you.',
+              style: t.bodySmall),
+        ]),
+      ),
+    );
+  }
 }

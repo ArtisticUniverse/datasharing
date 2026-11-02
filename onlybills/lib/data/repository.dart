@@ -1,5 +1,6 @@
 import '../models/bill.dart';
 import '../models/category.dart';
+import '../models/payment.dart';
 import '../models/preferences.dart';
 
 class SubmitBillRequest {
@@ -63,9 +64,15 @@ abstract class Repository {
   Future<void> savePreferences(DonorPreferences prefs);
   Future<SubmitResult> submitBill(SubmitBillRequest req);
 
-  /// Returns the remaining amount after funding.
-  Future<double> fundBill(String billId, double amount);
+  /// Personalised pay sheet for this donor: quick amounts + ranked payment methods.
+  Future<CheckoutPlan> getCheckout(String billId, {double? amount});
+
+  /// Runs the whole payment: create order, provider checkout, wait for the server to settle it.
+  Future<PaymentResult> pay(String billId, double amount, String method);
   Future<List<CategoryAnalytics>> loadAnalytics();
+
+  /// The donor's payment features from the data pipeline (donors/{uid}.paymentProfile).
+  Future<Map<String, dynamic>?> loadPaymentProfile();
 
   // Admin
   Future<void> upsertCategory(BillCategory c);

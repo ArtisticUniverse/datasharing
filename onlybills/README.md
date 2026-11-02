@@ -12,7 +12,8 @@ seed/build_seed.js          Builds categories.json (for Firestore + demo asset) 
 seed/build_demo_bills.js    Builds the 22 demo bills; their statuses come from the real server rules
 seed/seed_firestore.js      Uploads categories + default funding config to Firestore
 functions/rules.js          Pure policy logic: eligibility, donor checks, receipt verification, redaction
-functions/index.js          Cloud Functions: submitBill, fundBill, reviewBill, upsert/reorder/mergeCategories, analytics
+functions/payments.js       Payment data pipeline + per-donor method/amount recommendations
+functions/index.js          Cloud Functions: submitBill, getCheckout, createPaymentOrder, razorpayWebhook, reviewBill, upsert/reorder/mergeCategories, analytics
 functions/test/             Node tests for the policy (`npm test`)
 firestore.rules, storage.rules, firestore.indexes.json
 lib/                        Flutter app (models, data layer, screens, widgets)
@@ -98,9 +99,42 @@ re-seed. For one-off changes, use the in-app admin screen (Preferences → Manag
 
 Hindi and other languages: add `localizedNames.hi` (etc.) to category documents. The app falls back to English.
 
+## Payments
+
+Swiping right opens a one-tap pay sheet. The amount and payment method are already chosen for that donor,
+and they can change either one.
+
+```
+getCheckout ──► pay sheet ──► createPaymentOrder ──► Razorpay checkout ──► razorpayWebhook (signed)
+   ▲                                                                            │
+   │                                                                     applyDonation (transaction,
+   │                                                                     idempotent, refunds excess)
+   │                                                                            │
+donors/{uid}.paymentProfile ◄── onPaymentEvent ◄──────── paymentEvents/{id} ◄───┘
+analytics/paymentMethods    ◄── nightlyPaymentStats (30-day window, marks abandoned checkouts)
+```
+
+- **Event log** (`paymentEvents`): one row per attempt state (created, captured, failed, abandoned). Rows can arrive twice or out of order; only the latest final state of each payment counts.
+- **Donor profile** (rebuilt on every final event): usual amount (median, p75), success and failure per method and amount band, last method used, abandon rate. No card or bank details are stored.
+- **Platform stats** (nightly): success rate per method × amount band (under ₹500, ₹500–2k, ₹2k–10k, ₹10k–50k, over ₹50k).
+- **Ranking** (`recommendMethods`): expected success from the donor's own record, blended with platform data and then a prior when data is thin; a small boost for methods they've used; minus the fee, because fees reduce what reaches the bill. UPI is hidden above ₹1,00,000 and wallets above ₹10,000. Each option shows its reasons ("You used this last time · No fee · 94% success for amounts like this").
+- **Amounts** (`suggestAmounts`): about half, equal to, and above the donor's usual gift, rounded to friendly numbers, plus "pay the rest". They never exceed what is left.
+- If a payment fails, the sheet re-ranks with the failure counted and pre-selects the next best method.
+
+Safety: the app never marks a payment paid. Only a webhook with a valid HMAC signature, matching order id and
+exact amount settles it, inside a transaction that applies each payment once. If the bill filled up meanwhile,
+the excess is recorded as `refundDue`. When a bill is fully funded, a `payouts/{billId}` record is queued for the
+merchant or verified beneficiary.
+
+`functions/payments.js` and `lib/services/payment_engine.dart` hold the same logic (server and demo mode) and
+share test cases. `npm run test:emulator` runs the full settlement path against the Firestore emulator.
+
+Setup: `firebase functions:secrets:set RAZORPAY_KEY_ID` (and `RAZORPAY_KEY_SECRET`, `RAZORPAY_WEBHOOK_SECRET`),
+then point a Razorpay webhook for `payment.captured` and `payment.failed` at the `razorpayWebhook` URL.
+
 ## Not done yet
 
-- **Payments**: `FirebaseRepository.fundBill` throws until a provider (e.g. Razorpay) is integrated.
-  `fundBill` on the server already requires a captured, unconsumed `payments/{id}` record written by the provider's webhook.
+- **Refund and payout execution**: `refundDue` and `payouts/*` are recorded but not yet sent to Razorpay's Refunds / Route APIs.
+- **Live payments on web**: `razorpay_flutter` is Android/iOS only; a web build needs Razorpay's checkout.js. Demo mode works on web.
 - Age/KYC verification flow that sets `donors/{uid}.ageVerified`.
 - Server-generated redacted receipt images; moderator review UI (the `reviewBill` function exists).

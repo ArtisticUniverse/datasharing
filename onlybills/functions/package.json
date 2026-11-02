@@ -2,11 +2,14 @@
   "name": "onlybills-functions",
   "private": true,
   "main": "index.js",
-  "engines": { "node": "22" },
+  "engines": {
+    "node": "22"
+  },
   "scripts": {
     "test": "node --test",
-    "build:seed": "node ../seed/build_seed.js && node ../seed/build_demo_bills.js",
-    "seed": "node ../seed/seed_firestore.js"
+    "build:seed": "node ../seed/build_seed.js && node ../seed/build_demo_bills.js && node ../seed/build_demo_payments.js",
+    "seed": "node ../seed/seed_firestore.js",
+    "test:emulator": "cd .. && firebase emulators:exec --project demo-onlybills --only firestore \"node functions/integration/payments.emulator.js\""
   },
   "dependencies": {
     "firebase-admin": "^12.7.0",

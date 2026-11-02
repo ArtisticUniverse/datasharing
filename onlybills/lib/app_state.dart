@@ -58,6 +58,13 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Bumped after each payment so screens that show payment data reload.
+  int paymentsVersion = 0;
+  void paymentsChanged() {
+    paymentsVersion++;
+    notifyListeners();
+  }
+
   void setFilters(BillFilters f) {
     filters = f;
     notifyListeners();

@@ -1,8 +1,16 @@
 const { onCall, HttpsError } = require('firebase-functions/v2/https');
-const { onDocumentWritten } = require('firebase-functions/v2/firestore');
+const { onRequest } = require('firebase-functions/v2/https');
+const { onDocumentWritten, onDocumentCreated } = require('firebase-functions/v2/firestore');
+const { onSchedule } = require('firebase-functions/v2/scheduler');
+const { defineSecret } = require('firebase-functions/params');
 const admin = require('firebase-admin');
 const crypto = require('crypto');
 const rules = require('./rules');
+const payments = require('./payments');
+
+const RAZORPAY_KEY_ID = defineSecret('RAZORPAY_KEY_ID');
+const RAZORPAY_KEY_SECRET = defineSecret('RAZORPAY_KEY_SECRET');
+const RAZORPAY_WEBHOOK_SECRET = defineSecret('RAZORPAY_WEBHOOK_SECRET');
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -104,45 +112,7 @@ exports.submitBill = onCall({ enforceAppCheck: false }, async (req) => {
   return { billId: billRef.id, verificationStatus: bill.verificationStatus, fundingEligibility: bill.fundingEligibility, flags: v.flags };
 });
 
-// Donation is recorded atomically; payment capture happens with the provider before this call
-// and the provider's payment id is verified by the webhook that sets payments/{id}.status = captured.
-exports.fundBill = onCall(async (req) => {
-  const uid = requireAuth(req);
-  const { billId, amount, paymentId } = req.data || {};
-  const amt = Number(amount);
-  if (!billId || !Number.isFinite(amt) || amt <= 0) throw new HttpsError('invalid-argument', 'Bad request');
-  const config = await loadConfig();
-
-  return db.runTransaction(async (tx) => {
-    const billRef = db.doc(`bills/${billId}`);
-    const [billSnap, donorSnap, paySnap] = await Promise.all([
-      tx.get(billRef), tx.get(db.doc(`donors/${uid}`)), tx.get(db.doc(`payments/${paymentId}`)),
-    ]);
-    if (!billSnap.exists) throw new HttpsError('not-found', 'Bill not found');
-    const bill = billSnap.data();
-    if (bill.userId === uid) throw new HttpsError('failed-precondition', 'Cannot fund your own bill');
-    if (!paySnap.exists || paySnap.data().status !== 'captured' || paySnap.data().uid !== uid
-        || paySnap.data().amount !== amt || paySnap.data().consumed) {
-      throw new HttpsError('failed-precondition', 'Payment not verified');
-    }
-    const cat = (await tx.get(db.doc(`categories/${bill.subcategoryId || bill.categoryId}`))).data();
-    const check = rules.donorCanFund(bill, cat, donorSnap.exists ? donorSnap.data() : {}, config);
-    if (!check.allowed) throw new HttpsError('failed-precondition', check.reason);
-    const applied = Math.min(amt, bill.remainingAmount);
-    const remaining = bill.remainingAmount - applied;
-    tx.update(billRef, {
-      fundedAmount: FieldValue.increment(applied),
-      remainingAmount: remaining,
-      fundingStatus: remaining <= 0 ? 'funded' : 'partially_funded',
-    });
-    tx.update(paySnap.ref, { consumed: true, billId });
-    tx.set(db.collection('donations').doc(), {
-      billId, donorId: uid, amount: applied, currency: bill.currency, categoryId: bill.categoryId,
-      createdAt: FieldValue.serverTimestamp(),
-    });
-    return { applied, remainingAmount: remaining };
-  });
-});
+// Payments live in payments.js (data) and below in the "Payments" section.
 
 // Moderator decision on bills awaiting review.
 exports.reviewBill = onCall(async (req) => {
@@ -249,4 +219,185 @@ exports.onBillWritten = onDocumentWritten('bills/{billId}', async (event) => {
   bump(before, -1);
   bump(after, 1);
   await Promise.all(updates);
+});
+
+// ───────────────────────────── Payments ─────────────────────────────
+// Flow: getCheckout → createPaymentOrder → provider checkout in the app →
+// provider webhook (signed) → applyDonation. The client never marks anything paid.
+
+async function loadDonorAndBill(uid, billId) {
+  const [billSnap, donorSnap] = await Promise.all([db.doc(`bills/${billId}`).get(), db.doc(`donors/${uid}`).get()]);
+  if (!billSnap.exists) throw new HttpsError('not-found', 'Bill not found');
+  const bill = billSnap.data();
+  const cat = await loadCategory(bill.subcategoryId || bill.categoryId);
+  return { bill, cat, donor: donorSnap.exists ? donorSnap.data() : {} };
+}
+
+// Personalised pay sheet: ranked methods + quick amounts for this donor and bill.
+exports.getCheckout = onCall(async (req) => {
+  const uid = requireAuth(req);
+  const { billId, amount } = req.data || {};
+  const { bill, cat, donor } = await loadDonorAndBill(uid, billId);
+  const check = rules.donorCanFund(bill, cat, donor, await loadConfig());
+  if (!check.allowed) throw new HttpsError('failed-precondition', check.reason);
+  const global = (await db.doc('analytics/paymentMethods').get()).data() || {};
+  const amounts = payments.suggestAmounts(donor.paymentProfile, bill.remainingAmount);
+  const forAmount = Number(amount) > 0 ? Math.min(Number(amount), bill.remainingAmount) : amounts.defaultAmount;
+  return {
+    amounts,
+    methods: payments.recommendMethods(donor.paymentProfile, global.stats || {}, forAmount),
+  };
+});
+
+exports.createPaymentOrder = onCall({ secrets: [RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET] }, async (req) => {
+  const uid = requireAuth(req);
+  const { billId, method } = req.data || {};
+  const amount = Math.round(Number(req.data && req.data.amount));
+  if (!payments.METHODS[method]) throw new HttpsError('invalid-argument', 'Unknown payment method');
+  if (!Number.isFinite(amount) || amount < 1) throw new HttpsError('invalid-argument', 'Bad amount');
+  if (amount > payments.METHODS[method].maxAmount) throw new HttpsError('invalid-argument', 'Amount above method limit');
+  const { bill, cat, donor } = await loadDonorAndBill(uid, billId);
+  if (bill.userId === uid) throw new HttpsError('failed-precondition', 'Cannot fund your own bill');
+  const check = rules.donorCanFund(bill, cat, donor, await loadConfig());
+  if (!check.allowed) throw new HttpsError('failed-precondition', check.reason);
+  if (amount > bill.remainingAmount) throw new HttpsError('invalid-argument', 'More than the amount left');
+
+  const ref = db.collection('payments').doc();
+  const res = await fetch('https://api.razorpay.com/v1/orders', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Basic ' + Buffer.from(`${RAZORPAY_KEY_ID.value()}:${RAZORPAY_KEY_SECRET.value()}`).toString('base64'),
+    },
+    body: JSON.stringify({ amount: amount * 100, currency: bill.currency, receipt: ref.id, notes: { paymentId: ref.id, billId } }),
+  });
+  if (!res.ok) throw new HttpsError('unavailable', 'Payment provider unavailable, please retry');
+  const order = await res.json();
+  const now = Date.now();
+  await ref.set({
+    paymentId: ref.id, uid, billId, amount, currency: bill.currency, method, status: 'created',
+    providerOrderId: order.id, createdAt: now, consumed: false,
+  });
+  await logPaymentEvent({ paymentId: ref.id, uid, billId, method, amount, status: 'created', at: now });
+  return { paymentId: ref.id, orderId: order.id, keyId: RAZORPAY_KEY_ID.value(), amountPaise: amount * 100, currency: bill.currency };
+});
+
+function logPaymentEvent(e) {
+  return db.collection('paymentEvents').add({ ...e, categoryId: e.categoryId || null });
+}
+
+// Provider → us. Only a correctly signed request can mark a payment captured.
+exports.razorpayWebhook = onRequest({ secrets: [RAZORPAY_WEBHOOK_SECRET] }, async (req, res) => {
+  const expected = crypto.createHmac('sha256', RAZORPAY_WEBHOOK_SECRET.value()).update(req.rawBody).digest('hex');
+  const given = String(req.get('X-Razorpay-Signature') || '');
+  if (given.length !== expected.length || !crypto.timingSafeEqual(Buffer.from(given), Buffer.from(expected))) {
+    res.status(401).send('bad signature');
+    return;
+  }
+  const { event, payload } = req.body;
+  const p = payload && payload.payment && payload.payment.entity;
+  const paymentId = p && p.notes && p.notes.paymentId;
+  if (!paymentId) { res.status(200).send('ignored'); return; }
+  const ref = db.doc(`payments/${paymentId}`);
+  const snap = await ref.get();
+  if (!snap.exists || snap.data().providerOrderId !== p.order_id) { res.status(200).send('unknown'); return; }
+  const pay = snap.data();
+  const method = payments.METHODS[p.method] ? p.method : pay.method; // what the donor actually used
+  const now = Date.now();
+  if (event === 'payment.captured') {
+    if (p.amount !== pay.amount * 100) { res.status(400).send('amount mismatch'); return; }
+    await applyDonation(paymentId, { method, providerPaymentId: p.id });
+    await logPaymentEvent({ paymentId, uid: pay.uid, billId: pay.billId, method, amount: pay.amount, status: 'captured', at: now });
+  } else if (event === 'payment.failed') {
+    await ref.update({ status: 'failed', failureReason: p.error_reason || null, updatedAt: now });
+    await logPaymentEvent({ paymentId, uid: pay.uid, billId: pay.billId, method, amount: pay.amount, status: 'failed', at: now });
+  }
+  res.status(200).send('ok');
+});
+
+// Idempotent: a payment is applied to its bill exactly once. If the bill filled up meanwhile,
+// the excess is marked for refund instead of being kept.
+async function applyDonation(paymentId, { method, providerPaymentId }) {
+  const config = await loadConfig();
+  return db.runTransaction(async (tx) => {
+    const payRef = db.doc(`payments/${paymentId}`);
+    const pay = (await tx.get(payRef)).data();
+    if (pay.consumed) return;
+    const billRef = db.doc(`bills/${pay.billId}`);
+    const bill = (await tx.get(billRef)).data();
+    const cat = (await tx.get(db.doc(`categories/${bill.subcategoryId || bill.categoryId}`))).data();
+    const donorSnap = await tx.get(db.doc(`donors/${pay.uid}`));
+    const check = rules.donorCanFund(bill, cat, donorSnap.exists ? donorSnap.data() : {}, config);
+    const applied = check.allowed ? Math.min(pay.amount, bill.remainingAmount) : 0;
+    const refund = pay.amount - applied;
+    const remaining = bill.remainingAmount - applied;
+    if (applied > 0) {
+      tx.update(billRef, {
+        fundedAmount: FieldValue.increment(applied),
+        remainingAmount: remaining,
+        fundingStatus: remaining <= 0 ? 'funded' : 'partially_funded',
+      });
+      tx.set(db.collection('donations').doc(paymentId), {
+        billId: pay.billId, donorId: pay.uid, amount: applied, currency: pay.currency, categoryId: bill.categoryId,
+        method, createdAt: FieldValue.serverTimestamp(),
+      });
+    }
+    if (remaining <= 0 && applied > 0) {
+      // Funds go to the merchant / verified beneficiary, never to the uploader's personal account.
+      tx.set(db.doc(`payouts/${pay.billId}`), {
+        billId: pay.billId, amount: bill.amount, currency: pay.currency, payee: bill.merchantName,
+        status: 'pending_beneficiary_verification', createdAt: FieldValue.serverTimestamp(),
+      });
+    }
+    tx.update(payRef, {
+      status: 'captured', consumed: true, applied, refundDue: refund, method, providerPaymentId,
+      refundReason: refund > 0 ? (check.allowed ? 'bill_already_funded' : check.reason) : null,
+      updatedAt: Date.now(),
+    });
+  });
+}
+
+// Lets the app show the result as soon as the webhook lands.
+exports.getPaymentStatus = onCall(async (req) => {
+  const uid = requireAuth(req);
+  const snap = await db.doc(`payments/${req.data && req.data.paymentId}`).get();
+  if (!snap.exists || snap.data().uid !== uid) throw new HttpsError('not-found', 'Payment not found');
+  const { status, applied, refundDue } = snap.data();
+  const bill = (await db.doc(`bills/${snap.data().billId}`).get()).data();
+  return { status, applied: applied || 0, refundDue: refundDue || 0, remainingAmount: bill.remainingAmount };
+});
+
+// ─────────────────────── Payment data pipeline ───────────────────────
+
+// Incremental: refresh this donor's features whenever one of their payments reaches a final state.
+exports.onPaymentEvent = onDocumentCreated('paymentEvents/{id}', async (event) => {
+  const e = event.data.data();
+  if (!['captured', 'failed', 'abandoned'].includes(e.status)) return;
+  const recent = await db.collection('paymentEvents').where('uid', '==', e.uid)
+    .orderBy('at', 'desc').limit(500).get();
+  const profile = payments.buildDonorProfile(recent.docs.map((d) => d.data()));
+  await db.doc(`donors/${e.uid}`).set({ paymentProfile: profile }, { merge: true });
+});
+
+// Nightly batch: platform-wide success rates per method × amount over the last 30 days,
+// and close out checkouts the donor never finished so they count as abandoned.
+exports.nightlyPaymentStats = onSchedule({ schedule: '17 2 * * *', timeZone: 'Asia/Kolkata' }, async () => {
+  const now = Date.now();
+  const stale = await db.collection('payments').where('status', '==', 'created')
+    .where('createdAt', '<', now - 30 * 60 * 1000).limit(2000).get();
+  for (const d of stale.docs) {
+    const p = d.data();
+    await d.ref.update({ status: 'abandoned', updatedAt: now });
+    await logPaymentEvent({ paymentId: p.paymentId, uid: p.uid, billId: p.billId, method: p.method, amount: p.amount, status: 'abandoned', at: now });
+  }
+  const since = now - 30 * 86400000;
+  const rows = [];
+  let q = db.collection('paymentEvents').where('at', '>=', since).orderBy('at').limit(5000);
+  for (;;) {
+    const page = await q.get();
+    page.docs.forEach((d) => rows.push(d.data()));
+    if (page.size < 5000) break;
+    q = q.startAfter(page.docs[page.docs.length - 1]);
+  }
+  await db.doc('analytics/paymentMethods').set({ stats: payments.buildGlobalStats(rows), windowDays: 30, events: rows.length, updatedAt: now });
 });

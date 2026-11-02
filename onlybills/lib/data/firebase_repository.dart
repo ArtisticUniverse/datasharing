@@ -7,6 +7,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/bill.dart';
 import '../models/category.dart';
+import '../models/payment.dart';
+import '../services/payment_gateway.dart';
 import '../models/preferences.dart';
 import 'repository.dart';
 
@@ -28,7 +30,7 @@ class FirebaseRepository implements Repository {
       .map((s) => CategoryTree(s.docs.map((d) => BillCategory.fromMap(d.data()))));
 
   // Server-side filters only cover what Firestore can index; donor preferences and
-  // swipe filters are applied client-side on top, and re-checked by fundBill.
+  // swipe filters are applied client-side on top, and re-checked when a payment is created and settled.
   @override
   Stream<List<Bill>> watchFeed() => _db
       .collection('bills')
@@ -79,12 +81,50 @@ class FirebaseRepository implements Repository {
     );
   }
 
+  final PaymentGateway _gateway = RazorpayGateway();
+
   @override
-  Future<double> fundBill(String billId, double amount) async {
-    // TODO(payments): capture via the payment provider SDK (e.g. Razorpay) first; its
-    // server webhook writes payments/{paymentId} with status 'captured'.
-    throw UnimplementedError('Integrate a payment provider before enabling live funding.');
+  Future<CheckoutPlan> getCheckout(String billId, {double? amount}) async {
+    final r = await _fn.httpsCallable('getCheckout').call<Map<String, dynamic>>({'billId': billId, 'amount': amount});
+    return CheckoutPlan.fromMap(Map<String, dynamic>.from(r.data));
   }
+
+  @override
+  Future<PaymentResult> pay(String billId, double amount, String method) async {
+    final order = Map<String, dynamic>.from((await _fn
+            .httpsCallable('createPaymentOrder')
+            .call<Map<String, dynamic>>({'billId': billId, 'amount': amount, 'method': method}))
+        .data);
+    final outcome = await _gateway.open(
+      keyId: order['keyId'] as String,
+      orderId: order['orderId'] as String,
+      amountPaise: (order['amountPaise'] as num).toInt(),
+      method: method,
+      email: _auth.currentUser?.email,
+    );
+    if (outcome != PaymentStatus.captured) return PaymentResult(outcome);
+    // The checkout said "paid", but only the signed webhook makes it real. Wait for it.
+    for (var i = 0; i < 20; i++) {
+      final s = Map<String, dynamic>.from((await _fn
+              .httpsCallable('getPaymentStatus')
+              .call<Map<String, dynamic>>({'paymentId': order['paymentId']}))
+          .data);
+      if (s['status'] == 'captured') {
+        return PaymentResult(PaymentStatus.captured,
+            applied: (s['applied'] as num).toDouble(),
+            refundDue: (s['refundDue'] as num).toDouble(),
+            remainingAmount: (s['remainingAmount'] as num).toDouble());
+      }
+      if (s['status'] == 'failed') return const PaymentResult(PaymentStatus.failed);
+      await Future<void>.delayed(const Duration(seconds: 2));
+    }
+    return const PaymentResult(PaymentStatus.captured,
+        message: 'Payment received. Confirming with your bank; the bill updates in a minute.');
+  }
+
+  @override
+  Future<Map<String, dynamic>?> loadPaymentProfile() async =>
+      (await _db.doc('donors/$_uid').get()).data()?['paymentProfile'] as Map<String, dynamic>?;
 
   @override
   Future<List<CategoryAnalytics>> loadAnalytics() async {

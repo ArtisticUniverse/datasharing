@@ -1,0 +1,140 @@
+{
+ "generatedAt": 1793491200000,
+ "globalStats": {
+  "upi:m": {
+   "attempts": 799,
+   "captured": 722
+  },
+  "card:m": {
+   "attempts": 260,
+   "captured": 229
+  },
+  "upi:xs": {
+   "attempts": 1220,
+   "captured": 1162
+  },
+  "upi:l": {
+   "attempts": 811,
+   "captured": 578
+  },
+  "card:l": {
+   "attempts": 279,
+   "captured": 234
+  },
+  "netbanking:s": {
+   "attempts": 114,
+   "captured": 88
+  },
+  "netbanking:xs": {
+   "attempts": 188,
+   "captured": 151
+  },
+  "upi:xl": {
+   "attempts": 105,
+   "captured": 68
+  },
+  "card:s": {
+   "attempts": 265,
+   "captured": 232
+  },
+  "upi:s": {
+   "attempts": 756,
+   "captured": 685
+  },
+  "netbanking:m": {
+   "attempts": 145,
+   "captured": 125
+  },
+  "wallet:l": {
+   "attempts": 135,
+   "captured": 98
+  },
+  "card:xs": {
+   "attempts": 354,
+   "captured": 291
+  },
+  "netbanking:l": {
+   "attempts": 141,
+   "captured": 124
+  },
+  "wallet:m": {
+   "attempts": 100,
+   "captured": 85
+  },
+  "wallet:xs": {
+   "attempts": 173,
+   "captured": 155
+  },
+  "wallet:s": {
+   "attempts": 103,
+   "captured": 87
+  },
+  "card:xl": {
+   "attempts": 33,
+   "captured": 30
+  },
+  "netbanking:xl": {
+   "attempts": 19,
+   "captured": 17
+  }
+ },
+ "platformEvents": 6000,
+ "donorEvents": [
+  {
+   "paymentId": "d0",
+   "method": "upi",
+   "amount": 500,
+   "status": "captured",
+   "at": 1788307200000
+  },
+  {
+   "paymentId": "d1",
+   "method": "upi",
+   "amount": 1000,
+   "status": "captured",
+   "at": 1789603200000
+  },
+  {
+   "paymentId": "d2",
+   "method": "upi",
+   "amount": 500,
+   "status": "captured",
+   "at": 1790812800000
+  },
+  {
+   "paymentId": "d3",
+   "method": "upi",
+   "amount": 12000,
+   "status": "failed",
+   "at": 1791763200000
+  },
+  {
+   "paymentId": "d4",
+   "method": "card",
+   "amount": 12000,
+   "status": "captured",
+   "at": 1791763200000
+  },
+  {
+   "paymentId": "d5",
+   "method": "upi",
+   "amount": 750,
+   "status": "captured",
+   "at": 1792454400000
+  },
+  {
+   "paymentId": "d6",
+   "method": "wallet",
+   "amount": 300,
+   "status": "abandoned",
+   "at": 1792972800000
+  },
+  {
+   "paymentId": "d7",
+   "method": "upi",
+   "amount": 1000,
+   "status": "captured",
+   "at": 1793232000000
+  }
+ ]
+}
